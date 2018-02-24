@@ -1,0 +1,46 @@
+<!doctype>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/fonts.css"/>
+        <link rel="stylesheet" href="css/menu.css"/>
+        <link rel="stylesheet" href="css/index.css"/>
+        <script src="js/jquery.js"></script>
+        <script src="js/callbacks.js"></script>
+        <script src="js/animation.js"></script>
+        <script src="js/index.js"></script>
+        <title>Kirill Bogatikov Web Site</title>
+    </head>
+    <body>
+        <img 
+            id="GitHubLine" 
+            src="img/fork_me.png"
+            onmouseenter="GitHubAnimation.animate(0)" 
+            onmouseleave="GitHubAnimation.animate(1)" 
+            onclick="openLink('https://github.com/KirillBogatikov')"/>
+        <img id="GitHubIcon" src="img/icons/github.png"/>
+        
+        <header>
+            <div id="header-title">Kirill Bogatikov's official page</div>
+            <div id="header-description">Hello, my dear friend! Welcome to the official website of the developer Kirill Bogatikov! If you are fond of programming, here you will find a lot of useful information on languages such as Javascript, Java, C, C++. If you are a user and a fan of toys, here you will find some of my projects - exciting games with an exciting storyline and minimal requirements for your PC!</div>
+            <canvas id="avatar" onmouseenter="AvatarAnimation.start()" onmouseleave="AvatarAnimation.stop()"></canvas>
+            <div id="social-bar">
+                <img src="img/icons/vk.png" onclick="openLink('https://vk.com/kirill.bogatikov')"/>
+                <img src="img/icons/instagram.png" onclick="openLink('https://instagram.com/kirill.bogatikov')"/>
+                <img src="img/icons/facebook.png" onclick="openLink('https://facebook.com/kirill.bogatikov')"/>
+            </div>
+        </header>
+        <div id="header-nav-bar" class="menu">
+            <div id="header-nav-projects" class="menu-item">
+                Projects
+            </div>
+            <div id="header-nav-projects-list" class="list">
+                    <div class="list-item">A</div>
+                    <div class="list-item">B</div>
+                    <div class="list-item">C</div>
+            </div>
+            <div id="header-nav-about" class="menu-item">About</div>
+            <div id="header-nav-contacts" class="menu-item">Contacts</div>
+        </div>
+    </body>
+</html>

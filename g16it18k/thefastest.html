@@ -1,0 +1,51 @@
+<!doctype>
+<html>
+<head><meta charset="utf8"/></head>
+<body>
+    <script>
+        var group = ["Алтабаева", "Андрюшин", "Воеводин", "Волков", "Ворожейкин", "Горбачева", "Горшков", "Гришин", "Гусаров", "Дудаков", "Испольнов", "Каверзин", "Кожевников", "Комиссарова", "Куликов", "Проничкин", "Соломина", "Стрыгин", "Урядов", "Хазипов", "Челноков", "Шишкова"];
+        //var group = ["Абв", "где", "жзи", ];
+        
+        var times = [];
+        
+        var i = 0;
+        var sn, t1, t2;
+        
+        onload = function() {
+            sn = document.getElementById("surname");
+            t1 = document.getElementById("time1");
+            t2 = document.getElementById("time2");
+            sn.value = group[0];
+        }
+        
+        function next(){  
+            try{if(i == group.length - 1)
+                return showInfo();
+                }catch(e){alert(e)}
+                
+               
+            times.push([parseInt(t1.value), parseInt(t2.value)]);
+        
+            t1.value = "";
+            t2.value = "";
+            sn.value = group[++i];
+        }
+        
+        function showInfo() {
+            var mt1 = 0, mt2 = 0;
+            for(var j = 1; j < times.length; j++) {
+                if(times[j][0] < times[mt1][0])
+                    mt1 = j;
+                if(times[j][1] < times[mt2][1])
+                    mt2 = j;
+            }
+            
+            alert("Быстрее всех 1 задачу выполнил(-а) студент(-ка) " + group[mt1] + "\nВторую - " + group[mt2]);
+        }
+</script>
+    <br>Фамилия: <input id="surname" type="text"></input>
+    <br>Время 1 задача (секунды): <input id="time1" type="text"></input>
+    <br>Время 2 задача (секунды): <input id="time2" type="text"></input>
+    <br><button onclick="next()">Следующий</button>
+</body>
+</html>
