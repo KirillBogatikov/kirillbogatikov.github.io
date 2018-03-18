@@ -1,9 +1,9 @@
-onload = function() {
+Callbacks.__update();
+Callbacks.addOnloadListener(function(){
 	Callbacks.addOnDeviceOrientationChangeListener(refreshAdaptiveBlocks);
-	Callbacks.__update();
 	GitHubAnimation.initiate();
 	AvatarAnimation.initiate();
-}
+});
 
 function refreshAdaptiveBlocks() {
 	var header = $("HEADER");
