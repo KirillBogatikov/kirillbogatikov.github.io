@@ -1,0 +1,6 @@
+﻿{
+	engine:"https://kivitech.ucoz.net/engine.json",
+	audio:"https://kivitech.ucoz.net/audio.json",
+	cards:"https://kivitech.ucoz.net/cards.json",
+	poems:"https://kirillbogatikov.github.io/poems/poems.json"
+}
