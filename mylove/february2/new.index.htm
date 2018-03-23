@@ -42,6 +42,7 @@
 		<script>
 			Callbacks.__update();
 			Callbacks.addOnloadListener(function() {
+				const REL_PATH = "../";
 				var wp = new Wallpapers(true);
 				for(var i = 1; i < 8; i++) {
 					wp.addSlide(i + ".jpg");
@@ -49,8 +50,10 @@
 				
 				var sb = new SecretBlind();
 					
-				system = new AudioSystem("../audio.json");
-				system.fetch();
+				try {
+					system = new AudioSystem("../audio.json");
+					system.fetch();
+				} catch(E) { alert(E); }
 				
 				player = new AudioPlayer(256);
 				system.apply(player);
