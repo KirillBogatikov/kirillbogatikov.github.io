@@ -26,7 +26,7 @@ SecretBlind = function() {
 	this.background.attr("src", "img/wallpaper.gif").height("100%").css("position", "fixed").css("z-index", 998);
 	this.foreground = $("<div></div>");
 	this.foreground.html("Хочешь увидеть сюрпризик? Тогда переверни телефончик)").width("70%").css("position", "fixed").css("left", "15%").css("top", "35%").css("z-index", 998);
-	this.foreground.css("background", "rgba(255, 255, 255, 0.75)").css("font-size", "250%").css("text-align", "center").css("border-radius", 50);
+	this.foreground.css("background", "rgba(255, 255, 255, 0.75)").css("font-size", "250%").css("text-align", "center").css("border-radius", 50).css("padding", "25px");
 	
 	var f = function() {
 		if(screen.width > screen.height) {
