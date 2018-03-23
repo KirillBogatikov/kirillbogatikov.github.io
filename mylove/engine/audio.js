@@ -25,7 +25,6 @@ AudioPlayer = function(widthForUI) {
 	this.current = -1;
 	
 	this.tracks = [];
-	this.pauseButtonClicked = false;
 	
 	this.addTrack = function(track) {
 		this.tracks.push(track);
@@ -52,16 +51,10 @@ AudioPlayer = function(widthForUI) {
 	}
 	
 	this.pause = function() {
-		//this.pauseButtonClicked = true;
 		this.nativePlayer.pause();
 	}
 	
 	this.playNextTrack = function() {
-		/*if(this.pauseButtonClicked) {
-			this.pauseButtonClicked = false;
-			return;
-		}
-		*/
 		if(++this.current >= this.tracks.length)
 			this.current = 0;
 		
@@ -95,8 +88,15 @@ AudioPlayer = function(widthForUI) {
 	this.UI = new AudioPlayerUI(this, widthForUI);
 	
 	this.nativePlayer.on("pause", function() {
+		this.UI.updatePlayButton(true);
+		
 		if(Math.round(this.nativePlayer.currentTime) == Math.round(this.nativePlayer.duration))
 			this.playNextTrack();
+		
+	}.bind(this));
+	
+	this.nativePlayer.on("play", function() {
+		this.UI.updatePlayButton(false);
 	}.bind(this));
 	
 	this.nativePlayer.on("timeupdate", function() {
@@ -197,12 +197,11 @@ AudioPlayerUI = function(player, width) {
 		var state = this.play.attr('state');
 		if(state == 'play') {
 			player.play();
-			this.play.attr('state', 'pause');
+			this.updatePlayButton(false);
 		} else {
 			player.pause();
-			this.play.attr('state', 'play');
+			this.updatePlayButton(true);
 		}
-		this.play.attr("src", "img/audioplayer/" + this.play.attr('state') + ".png");
 	}.bind(this));
 	this.next.on("click", function(){ player.playNextTrack(); });
 	this.volume.on("click", function() {
@@ -223,7 +222,7 @@ AudioPlayerUI = function(player, width) {
 	
 	this.controls = $("<div></div>");
 	this.controls.append(this.last).append(this.play).append(this.next).append(this.volume);
-
+	
 	this.container = $("<table></table>");
 	var line = $("<tr></tr>");
 	var cell = $("<td style='padding-left:15px'></td>");
@@ -265,6 +264,7 @@ AudioPlayerUI = function(player, width) {
 	};
 	
 	this.startSeekbarTracking = function(event) {
+		alert(event.target);
 		if(event.target != this.seekbar.point[0])
 			return;
 			
@@ -306,6 +306,15 @@ AudioPlayerUI = function(player, width) {
 			
 		this.setProgress(x / this.seekbar.background.width(), true);
 	}	
+	
+	this.updatePlayButton = function(paused) {
+		if(!paused)
+			this.play.attr('state', 'pause');
+		else
+			this.play.attr('state', 'play');
+			
+		this.play.attr("src", "img/audioplayer/" + this.play.attr('state') + ".png");
+	}
 	
 	this.updateTrackInfo = function(current, duration, _title) {
 		this.timer.current.html(current[0] + ":" + current[1]);
