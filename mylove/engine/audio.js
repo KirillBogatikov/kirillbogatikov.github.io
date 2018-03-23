@@ -273,9 +273,11 @@ AudioPlayerUI = function(player, width) {
 	this.trackSeeking = function(event) {
 		if(this.seekbar.point.attr("state") != "down")
 			return;
-			
+		
 		var x = event.clientX - this.container[0].offsetLeft - this.seekbar.background[0].offsetLeft;
 		var y = event.clientY - this.container[0].offsetTop - this.seekbar.background[0].offsetTop;
+		alert(x + ":" + y);
+		
 		if(x < this.seekbar.point.width() / 2 || x > this.seekbar.background.width())
 			return;
 			
