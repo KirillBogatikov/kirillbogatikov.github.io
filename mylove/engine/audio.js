@@ -274,9 +274,13 @@ AudioPlayerUI = function(player, width) {
 		if(this.seekbar.point.attr("state") != "down")
 			return;
 		
-		var x = event.clientX - this.container[0].offsetLeft - this.seekbar.background[0].offsetLeft;
-		var y = event.clientY - this.container[0].offsetTop - this.seekbar.background[0].offsetTop;
-		alert(x + ":" + y);
+		var x, y;
+		if(event.originalEvent.touches)	{
+			event = event.originalEvent.touches[0];
+		}
+		
+		x = event.clientX - this.container[0].offsetLeft - this.seekbar.background[0].offsetLeft;
+		y = event.clientY - this.container[0].offsetTop - this.seekbar.background[0].offsetTop;
 		
 		if(x < this.seekbar.point.width() / 2 || x > this.seekbar.background.width())
 			return;
@@ -327,8 +331,8 @@ AudioPlayerUI = function(player, width) {
 	$(window).on("mousedown", this.startSeekbarTracking.bind(this));
 	$(window).on("mousemove", this.trackSeeking.bind(this));
 	
-	$(window).on("touchstart", this.stopSeekbarTracking.bind(this));
-	$(window).on("touchend", this.startSeekbarTracking.bind(this));
+	$(window).on("touchstart", this.startSeekbarTracking.bind(this));
+	$(window).on("touchend", this.stopSeekbarTracking.bind(this));
 	$(window).on("touchmove", this.trackSeeking.bind(this));
 	
 };
