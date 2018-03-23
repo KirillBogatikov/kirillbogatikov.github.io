@@ -52,16 +52,16 @@ AudioPlayer = function(widthForUI) {
 	}
 	
 	this.pause = function() {
-		this.pauseButtonClicked = true;
+		//this.pauseButtonClicked = true;
 		this.nativePlayer.pause();
 	}
 	
 	this.playNextTrack = function() {
-		if(this.pauseButtonClicked) {
+		/*if(this.pauseButtonClicked) {
 			this.pauseButtonClicked = false;
 			return;
 		}
-		
+		*/
 		if(++this.current >= this.tracks.length)
 			this.current = 0;
 		
@@ -94,7 +94,10 @@ AudioPlayer = function(widthForUI) {
 	
 	this.UI = new AudioPlayerUI(this, widthForUI);
 	
-	this.nativePlayer.on("pause", this.playNextTrack.bind(this));
+	this.nativePlayer.on("pause", function() {
+		if(Math.round(this.nativePlayer.currentTime) == Math.round(this.nativePlayer.duration))
+			this.playNextTrack();
+	}.bind(this));
 	
 	this.nativePlayer.on("timeupdate", function() {
 	  	 var p = this.nativePlayer.currentTime / this.nativePlayer.duration;
