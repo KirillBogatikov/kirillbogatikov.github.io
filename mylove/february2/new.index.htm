@@ -40,9 +40,10 @@
 		<script src="../engine/audio.js"></script>
 		<script src="../engine/wallpapers.js"></script>
 		<script>
+			REL_PATH = "../";
+				
 			Callbacks.__update();
 			Callbacks.addOnloadListener(function() {
-				const REL_PATH = "../";
 				var wp = new Wallpapers(true);
 				for(var i = 1; i < 8; i++) {
 					wp.addSlide(i + ".jpg");

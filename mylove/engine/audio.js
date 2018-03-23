@@ -159,10 +159,10 @@ AudioPlaylistUI = function(player) {
 AudioPlayerUI = function(player, width) {
 	const DEL = 10;
 	
-	this.last = $("<img class='audio-player-button' src='img/audioplayer/last.png'/>");
-	this.play = $("<img class='audio-player-button' src='img/audioplayer/play.png' state='play'/>");
-	this.next = $("<img class='audio-player-button' src='img/audioplayer/next.png'/>");
-	this.volume = $("<img class='audio-player-button' src='img/audioplayer/volume_on.png' state='on'/>");
+	this.last = $("<img class='audio-player-button' src='" + REL_PATH + "img/audioplayer/last.png'/>");
+	this.play = $("<img class='audio-player-button' src='" + REL_PATH + "img/audioplayer/play.png' state='play'/>");
+	this.next = $("<img class='audio-player-button' src='" + REL_PATH + "img/audioplayer/next.png'/>");
+	this.volume = $("<img class='audio-player-button' src='" + REL_PATH + "img/audioplayer/volume_on.png' state='on'/>");
 	
 	this.seekbar = {
 		container:$("<div></div>"),
@@ -212,7 +212,7 @@ AudioPlayerUI = function(player, width) {
 		} else {
 			this.volume.attr('state', 'on');
 		}
-		this.volume.attr("src", "img/audioplayer/volume_" + this.volume.attr('state') + ".png");
+		this.volume.attr("src", REL_PATH + "img/audioplayer/volume_" + this.volume.attr('state') + ".png");
 	}.bind(this));
 	
 	this.timer.current.html("00:00");
@@ -318,7 +318,7 @@ AudioPlayerUI = function(player, width) {
 		else
 			this.play.attr('state', 'play');
 			
-		this.play.attr("src", "img/audioplayer/" + this.play.attr('state') + ".png");
+		this.play.attr("src", REL_PATH + "img/audioplayer/" + this.play.attr('state') + ".png");
 	}
 	
 	this.updateTrackInfo = function(current, duration, _title) {
