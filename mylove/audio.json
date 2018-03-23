@@ -1,36 +1,36 @@
 ﻿[
 	{
-		"src":"/audio/come_with_me_now.mp3",
+		"src":"audio/come_with_me_now.mp3",
 		"title":"Kongos - Come with me now"
 	}, { 
-		"src":"/audio/rock_you_like.mp3",
+		"src":"audio/rock_you_like.mp3",
 		"title":"Scorpions - Rock You Like a Hurricane"
 	}, {
-		"src":"/audio/despacito.mp3",
+		"src":"audio/despacito.mp3",
 		"title":"Luis Fonsi & Daddy Yankee - Despacito"
 	}, {
-		"src":"/audio/behind_blue_eyes.mp3",
+		"src":"audio/behind_blue_eyes.mp3",
 		"title":"Limp Bizkit - Behind blue eyes"
 	}, {
-		"src":"/audio/je_ne_regrette_rien.mp3",
+		"src":"audio/je_ne_regrette_rien.mp3",
 		"title":"Эдит Пиаф - Non, je ne regrette rien"
 	}, {
-		"src":"/audio/believer.mp3",
+		"src":"audio/believer.mp3",
 		"title":"Imagine Dragons - Believer"
 	}, {
-		"src":"/audio/slepakov_margarita.mp3",
+		"src":"audio/slepakov_margarita.mp3",
 		"title":"Семён Слепаков - Маргарита"
 	}, {
-		"src":"/audio/dobrynin_margarita.mp3",
+		"src":"audio/dobrynin_margarita.mp3",
 		"title":"Александр Добрынин - Рита-Маргарита"
 	}, {
-		"src":"/audio/cleant_eastwood.mp3",
+		"src":"audio/cleant_eastwood.mp3",
 		"title":"Gorillaz - Cleant Eastwood"
 	}, {
-		"src":"/audio/two_weeks.mp3",
+		"src":"audio/two_weeks.mp3",
 		"title":"Grizzly Bear - Two Weeks"
 	}, {
-		"src":"/audio/the_best.mp3",
+		"src":"audio/the_best.mp3",
 		"title":"Егор Крид - Самая"
 	}
 ]

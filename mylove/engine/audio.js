@@ -30,7 +30,7 @@ AudioPlayer = function(widthForUI) {
 		this.tracks.push(track);
 		if(this.tracks.length == 1) {
 			this.current++;
-			this.nativePlayer.src = track.src;
+			this.nativePlayer.src = "/mylove/" + track.src;
 		}
 	};
 	
