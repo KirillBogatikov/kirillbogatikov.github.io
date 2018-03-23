@@ -1,0 +1,237 @@
+﻿<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Ох, Маргаритка...</title>
+		<style>
+			@font-face {
+    				font-family: MonotypeCorsiva;
+    				src: url("../fonts/MonotypeCorsiva.ttf");
+   			}
+   			
+   			body {
+				margin:0px;
+				font-size:150%;
+				font-family:MonotypeCorsiva;
+			}
+			
+			#prizeForMyLoveMargaretImg {
+				width:7%;
+				position:absolute;
+				padding-top:25px;
+				padding-left:25px;
+				z-index:999;
+			}
+			
+			.text-background {
+				background:#B68C5B;
+				position:absolute;
+				opacity:0.8;
+				border-radius:30px;
+			}
+			
+			.text-foreground {
+				position:absolute;
+				color:#3F2A21;
+				padding:15px;
+				text-align:center;
+			}
+			
+			#title {
+				width:60%;
+				left:20%;
+			}
+			
+			#msg {
+				width:50%;
+				left:5%;
+			}
+			
+			#bgimg {
+				z-index:-999;
+   				width:100%;
+   				position:absolute;
+   				top:0px;
+   				left:0px;
+   			}
+   			
+   			#star {
+   				z-index:999;
+   				width:7%;
+   				position:absolute;
+   				right:25px;
+   				top:25px;
+   			}
+   			
+   			#rotate {
+				position:absolute;
+				display:block;
+				width:100%;
+				height:100%;
+				background:#010101;
+				text-align:center;
+				padding-top:47%;
+				font-size:200%;
+				color:white;
+			}
+			
+			#audio {
+				position:absolute;
+				top:5%;
+				left:20%;
+				width:60%;
+				display:none;
+			}
+		</style>
+		<script>
+			var audio1511 = [
+				{
+					src:"slepakov_margarita.mp3",
+					txt:"Семён Слепаков - Маргарита"
+				},{
+					src:"dobrynin_margarita.mp3",
+					txt:"Александр Добрынин - Рита-Маргарита"
+				},{
+					src:"antipa-margarita.mp3",
+					txt:"АнтипА - Маргарита..."
+				},{
+					src:"daniko_margarita.mp3",
+					txt:"Данико - Маргарита"
+				},{
+					src:"cleant_eastwood.mp3",
+					txt:"Gorillaz - Cleant Eastwood"
+				}, {
+					src:"two_weeks.mp3",
+					txt:"Grizzly Bear - Two Weeks"
+				}, {
+					src:"the_best.mp3",
+					txt:"Егор Крид - Самая"
+				}
+			];
+			
+			var cm = 0;
+			var apl;
+			
+			function play(i) {
+				if(cm == i) {
+					dismissPlaylist();
+					return;
+				}
+				
+				cm = i;
+				apl.setAttribute("src", "../audio/" + audio1511[i].src);
+				dismissPlaylist();
+			}
+			
+			function createPlaylist() {
+				var pl = document.getElementById("audio");
+				
+				for(var i = 0; i < audio1511.length; i++) {
+					var sound = audio1511[i];
+					
+					var div = document.createElement("div");
+					div.setAttribute("id", "audio-track-" + i);
+					div.setAttribute("style", "width:100%;padding:25px;margin-top:10px;margin-bottom:10px;background:" + (cm == i ? "#6668EC" : "#FBC13B"));
+					div.innerHTML = sound.txt;
+					eval("div.onclick = function(){ play(" + i + "); }");
+					pl.appendChild(div);
+				}
+			}
+			
+			function showPlaylist() {
+				var pl = document.getElementById("audio");
+				for(var i = 0; i < audio1511.length; i++) {
+					var div = document.getElementById("audio-track-" + i);
+					div.setAttribute("style", "width:100%;padding:25px;margin-top:10px;margin-bottom:10px;background:" + (cm == i ? "#6668EC" : "#FBC13B"));
+				}	
+				
+				pl.setAttribute("style", "display:block");
+				
+			}
+			
+			function dismissPlaylist() {
+				var pl = document.getElementById("audio");
+				pl.setAttribute("style", "display:none");
+			}
+			
+			var bgimg;
+			var bgid = 0;
+			
+			function a1905(){
+				if(bgid == 7)
+					bgid = 0;
+					
+				bgimg.setAttribute("src", (++bgid) + ".jpg");
+			}
+			
+			function c1511() {
+				bgs = document.getElementsByClassName("text-background");
+				fgs = document.getElementsByClassName("text-foreground");
+				
+				for(var i = 0; i < bgs.length; i++) {
+					var bg = bgs[i], fg = fgs[i];
+					
+					bg.setAttribute("style", "width:" + fg.offsetWidth + "px;height:" + fg.offsetHeight + "px;left:" + fg.offsetLeft + "px;top:" + fg.offsetTop + "px");
+				}
+			}
+			
+			function b1505() {
+				var msg = document.getElementById("msg");
+				msg.setAttribute("style", "top:" + (bgimg.offsetHeight - msg.offsetHeight - 50) + "px;");
+			}
+			
+			onload = function() {
+				apl = document.getElementById("apl");
+				apl.onpause = function() {
+					play(cm + 1);
+				}
+				
+				bgimg = document.getElementById("bgimg");
+   				f1511 = function() {
+					if(screen.width > screen.height) {
+						document.getElementById("rotate").setAttribute("style", "display:none");
+						document.getElementById("main").setAttribute("style", "display:block");
+						b1505();
+						c1511();
+					} else {
+						document.getElementById("rotate").setAttribute("style", "display:block");
+						document.getElementById("main").setAttribute("style", "display:none");
+					}
+					
+					setTimeout(f1511, 40);
+				};
+				f1511();
+				b1505();
+				c1511();
+				a1905();
+				
+				createPlaylist();
+			};
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<img id="bgimg" onclick="a1905()"/>
+			<a href="prizeForMyLoveMargaret.jpg" download id="prizeForMyLoveMargaret"></a>
+			<img id="prizeForMyLoveMargaretImg" src="prizeForMyLoveMargaret.jpg" onclick="javascript:document.getElementById('prizeForMyLoveMargaret').click();"/>
+			<img id="star" onclick="showPlaylist()" src="../audio/star.png"/>
+			<div class="text-background"></div>
+			<div id="title" class="text-foreground">
+				Любовь моя Маргаритка!<br>
+				Ох, дорогая, я очень сильно тебя люблю!
+			</div>
+			<div class="text-background"></div>
+			<div id="msg" class="text-foreground">
+				Ох, любовь моя, Риточка! Я очень сильно по тебе соскучился! Я так хочу поскорее заглянуть в твои кристально чистые ангельские карие глазки! Так хочу обнять тебя крепко-крепко! Прижать к себе, тьмокнуть тебя в твой лобик, милый носик, потереться о нег освоим носиком... Ух...<br>
+				Люблю тебя, дорогая и очень хочу чтобы мы были вместе всегда-всегда!!!<br>
+				Риточка, ох, моя дорогая, мой лучик солнца, мой ангелочек, моя любимка! Как же я хочу тебя обнять и поцелвать... Ухххх... Риточка, я тебя люблю и очень по тебе соскучился!
+			</div>
+			<div id="audio"></div>
+		</div>
+		<div id="rotate">
+			<p>Приветик! Хочешь увидеть сюрприз?
+			<p>Тогда переверни телефончик))
+		</div>
+		<audio id="apl" src="../audio/the_best.mp3" autoplay></audio>
+	</body>
+</html>

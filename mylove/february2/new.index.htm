@@ -1,0 +1,65 @@
+﻿<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Ох, Маргаритка...</title>
+		<style>
+			@font-face {
+    				font-family: MonotypeCorsiva;
+    				src: url("../fonts/MonotypeCorsiva.ttf");
+   			}
+   			
+   			body {
+				margin:0px;
+				font-size:150%;
+				font-family:MonotypeCorsiva;
+			}
+			
+			#prizeForMyLoveMargaretImg {
+				width:7%;
+				position:absolute;
+				padding-top:25px;
+				padding-left:25px;
+				z-index:999;
+			}
+			
+			#title {
+				width:60%;
+				left:20%;
+			}
+			
+			#msg {
+				width:50%;
+				left:5%;
+				background:rgba(182, 140, 91, 0.8);
+				color:#3F2A21;
+			}
+		</style>
+		<script src="../engine/jquery.js"></script>
+		<script src="../engine/callbacks.js"></script>
+		<script src="../engine/audio.js"></script>
+		<script src="../engine/wallpapers.js"></script>
+		<script>
+			Callbacks.__update();
+			Callbacks.addOnloadListener(function() {
+				var wp = new Wallpapers(true);
+				wp.addSlide("1.png");
+				wp.addSlide("2.png");
+				
+				var sb = new SecretBlind();
+					
+				system = new AudioSystem("../audio.json");
+				system.fetch();
+				
+				player = new AudioPlayer(256);
+				system.apply(player);
+				
+				playlist = new AudioPlaylistUI(player);
+				
+			});
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

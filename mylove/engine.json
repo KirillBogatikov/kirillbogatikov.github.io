@@ -1,0 +1,4 @@
+﻿{
+	js:["jquery.js", "audio.js, "mobile.js", "callbacks.js"],
+	fonts:["KatherinePlus.ttf", "MonotypeCorsia.ttf", "Nickainley.otf"]
+}

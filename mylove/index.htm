@@ -1,0 +1,35 @@
+﻿<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>100 дней, Маргаритка!</title>
+		<script src="engine/jquery.js"></script>
+		<script src="engine/callbacks.js"></script>
+		<script src="engine/audio.js"></script>
+		<script src="engine/wallpapers.js"></script>
+		<script>
+			Callbacks.__update();
+			
+			
+			Callbacks.addOnloadListener(function() {
+				var wp = new Wallpapers(true);
+				wp.addSlide("1.png");
+				wp.addSlide("2.png");
+				
+				var sb = new SecretBlind();
+					
+				system = new AudioSystem("audio.json");
+				system.fetch();
+				
+				player = new AudioPlayer(256);
+				system.apply(player);
+				
+				playlist = new AudioPlaylistUI(player);
+				
+			});
+		</script>
+	</head>
+	<body style="margin:0px" background="1.png">
+		
+	</body>
+</html>
