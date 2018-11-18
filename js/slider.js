@@ -3,67 +3,82 @@
  */
 SCROLLBAR_WIDTH = 0;
 
-Slider = function(parent, width, height) {
+Slider = function(parent, width, height, customRoot) {
 	this.parent = parent;
 	
 	this.slides = [];
 	
-	this.root = $("<div></div>");
-	this.root.css("overflow", "hidden")
-			 .width(width).height(height); 
-	this.parent.append(this.root);
-	
-	this.size = {
-		width: parseInt(this.root.width()), 
-		height: parseInt(this.root.height())
-	};
+	if(customRoot) {
+		this.root = $(customRoot);
+	} else {
+		 this.root = $("<div></div>");	
+		 this.parent.append(this.root);
+	}
+	this.root.css("overflow", "hidden"); 
+	this.resize(width, height);
 	
 	this.container = $("<div></div>");
 	this.container.css("position", "relative")
 				  .css("overflowX", "visible")
-				  .width(this.size.width).height(this.size.height);
+				  .height("100%");
 	this.root.append(this.container);
-	
-	this.left = $("<img src='img/slider/left.png'/>");
-	this.left.css("position", "absolute")
-			 .width(this.size.height / 3).height(this.size.height / 3)
-			 .css("float", "left")
-			 .css("top", this.size.height / 3);
-	this.root.append(this.left);
 }
 
 Slider.prototype.add = function(slide) {
 	this.slides.push(slide);
-	this.container.width(this.slides.length * this.size.width);
+	this.container.width(this.slides.length * this.slideWidth);
 	this.container.append(slide);
 }
 
-Slider.prototype.__animate = function(l) {
-	this.container.animate({left:l}, 400);
+Slider.prototype.__swipe = function(forward) {
+	var left;
+	if(forward) {
+		left = parseInt(this.container.css("left")) - this.slideWidth;
+		if(left <= (-this.slides.length * this.slideWidth)) {
+			left = 0;
+		}
+	} else {
+		left = parseInt(this.container.css("left"));
+		if(left == 0) {
+			left = -this.slides.length * this.slideWidth;
+		}
+		left += this.slideWidth;
+	}
+	this.container.animate({left:left}, 400);
 }
 
-Slider.prototype.next = function(a) {
-	if(!a)this.stop();
-	var l = parseInt(this.container.css("left")) - this.size.width;
-	if(l <= -this.container.width()) {
-		l = 0;
-	}
-	this.__animate(l);
+Slider.prototype.next = function() {
+	this.stop();
+	this.__swipe(true);
+	this.start();
 }
 
 Slider.prototype.last = function() {
 	this.stop();
-	var l = parseInt(this.container.css("left"));
-	if(l == 0) {
-		l = -(this.slides.length) * this.size.width;
-	}
-	l += this.size.width;
-	this.__animate(l);
+	this.__swipe(false);
+	this.start();
 }
 
-Slider.prototype.start = function() {
-	this.next(true);
-	this.thread = setTimeout(this.start.bind(this), 7500);
+Slider.prototype.__autoSwipe = function() {
+	this.__swipe(true);
+	
+	console.log("NEXT!");
+	this.thread = setTimeout(this.__autoSwipe.bind(this), this.duration);
+}
+
+Slider.prototype.resize = function(width, height) {
+	this.root.width(width).height(height); 
+	this.slideWidth = parseInt(this.root.width());
+}
+
+Slider.prototype.start = function(duration) {
+	if(duration) {
+		this.duration = duration;
+	} else if(!this.duration) {
+		this.duration = 7500;
+	}
+	
+	this.thread = setTimeout(this.__autoSwipe.bind(this), this.duration);
 }
 
 Slider.prototype.stop = function() {

@@ -2,25 +2,18 @@
  * Auto Fixes Per Second
  */
 const AFPS = 25;
+/**
+ * Storage onload callbacks
+ */
+customOnloads = [];
+customAutoFixes = [];
 
 onload = function() {
 	startAutoFix();
 	
-	slider = new Slider($("#preview"), 1008, 365);
-	
-	var colors = ["red", "blue", "yellow", "#ffd800"];
-	for(var i in colors) {
-		slider.add($("<div style='float:left;position:relative;width:1008px;height:365px;background:" + colors[i] + "'></div>"));
-	}
-	
-	/*var c =  function() {
-		slider.next();
-		setTimeout(c, 3000);
-	}
-	c();*/
-	
-	if(window["customOnload"]) {
-		custumOnload();
+	if(customOnloads.length > 0) {
+		for(var id in customOnloads)
+			customOnloads[id]();
 	}
 }
 
@@ -36,6 +29,11 @@ function startAutoFix() {
 		
 		fixHeaderWidth();
 		fixSectionsPosition();
+		
+		if(customAutoFixes.length > 0) {
+			for(var id in customAutoFixes)
+				customAutoFixes[id]();
+		}
 	}
 	
 	setTimeout(startAutoFix, 1000 / AFPS);
