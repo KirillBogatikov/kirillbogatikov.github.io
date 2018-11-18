@@ -6,6 +6,19 @@ const AFPS = 25;
 onload = function() {
 	startAutoFix();
 	
+	slider = new Slider($("#preview"), 1008, 365);
+	
+	var colors = ["red", "blue", "yellow", "#ffd800"];
+	for(var i in colors) {
+		slider.add($("<div style='float:left;position:relative;width:1008px;height:365px;background:" + colors[i] + "'></div>"));
+	}
+	
+	/*var c =  function() {
+		slider.next();
+		setTimeout(c, 3000);
+	}
+	c();*/
+	
 	if(window["customOnload"]) {
 		custumOnload();
 	}
