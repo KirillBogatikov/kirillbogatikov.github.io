@@ -7,6 +7,7 @@ BODY {
     padding-left: 10%;
     padding-right: 10%;
     text-align: center;
+    background: black;
 }
 
 .slider-buttons {
@@ -19,7 +20,7 @@ BODY {
 }
 
 .slider-buttons:hover {
-    background: rgba(0, 0, 0, 0.2);	
+    background: rgba(255, 255, 255, 0.2);	
 }
 
 #slider-last {

@@ -23,11 +23,11 @@ var lastScreen = {
 };
 
 function startAutoFix() {
+	fixHeaderWidth();
 	if(lastScreen.width != screen.width || lastScreen.height != screen.height) {
 		lastScreen.width = screen.width;
 		lastScreen.height = screen.height;
 		
-		fixHeaderWidth();
 		fixSectionsPosition();
 		
 		if(customAutoFixes.length > 0) {
@@ -50,5 +50,5 @@ function fixHeaderWidth() {
 function fixSectionsPosition() {
 	var preview = $("#preview");
 	var header = $("#header");
-	preview.css("margin-top", header.height() + 30);
+	preview.css("padding-top", header.height() + 45);
 }

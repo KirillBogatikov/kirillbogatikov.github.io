@@ -5,19 +5,35 @@
     src: url("../fonts/capture-it.ttf");
 }
 
+@font-face {
+    font-family: OwnHand;
+    src: url("../fonts/own-hand.ttf");
+}
+
+@font-face {
+    font-family: Stylo;
+    src: url("../fonts/stylo.ttf");
+}
+
 ::selection {
-    background: rgba(255, 255, 255, 0.7);
-    color: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 ::-moz-selection {
-    background: rgba(255, 255, 255, 0.7);
-    color: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 BODY {
 	margin: 0px;
-	font-size: 100%;
+	font-size: 150%;
+	font-family: OwnHand;
+}
+
+H1 {
+	font-family: CaptureIt;
+	font-size: 150%;
 }
 
 #header {
@@ -30,7 +46,7 @@ BODY {
 	color: white;
 	
 	font-family: CaptureIt;
-	font-size: 200%;
+	font-size: 125%;
 	z-index: 10;
 }
 
@@ -47,11 +63,12 @@ BODY {
 }
 
 .section {
-    width: 60%;
+    width: 70%;
     padding: 15px;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 15%;
+    padding-right: 15%;
     border-bottom: solid 5px black;
     position: relative;
     display: block;
+    text-align: center;
 }

@@ -6,6 +6,7 @@ SCROLLBAR_WIDTH = 0;
 Slider = function(parent, width, height, customRoot) {
 	this.parent = parent;
 	
+	this.currentSlide = 0;
 	this.slides = [];
 	
 	if(customRoot) {
@@ -33,18 +34,16 @@ Slider.prototype.add = function(slide) {
 Slider.prototype.__swipe = function(forward) {
 	var left;
 	if(forward) {
-		left = parseInt(this.container.css("left")) - this.slideWidth;
-		if(left <= (-this.slides.length * this.slideWidth)) {
-			left = 0;
+		if(++this.currentSlide == this.slides.length) {
+			this.currentSlide = 0;
 		}
 	} else {
-		left = parseInt(this.container.css("left"));
-		if(left == 0) {
-			left = -this.slides.length * this.slideWidth;
+		if(--this.currentSlide == -1) {
+			this.currentSlide = this.slides.length - 1;
 		}
-		left += this.slideWidth;
 	}
-	this.container.animate({left:left}, 400);
+	
+	this.container.animate({left:(this.currentSlide * -this.slideWidth)}, 400);
 }
 
 Slider.prototype.next = function() {
@@ -61,8 +60,6 @@ Slider.prototype.last = function() {
 
 Slider.prototype.__autoSwipe = function() {
 	this.__swipe(true);
-	
-	console.log("NEXT!");
 	this.thread = setTimeout(this.__autoSwipe.bind(this), this.duration);
 }
 
