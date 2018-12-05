@@ -10,6 +10,11 @@ Project = function(data) {
     this.dependences = data.dependences;
     this.tools = data.tools;
     this.icon = data.icon;
+    
+    if(this.icon.match(/repo:.+/)) {
+    	this.icon = this.icon.replace("repo:", GITHUB_ACCOUNT_LINK + "/" + this.repository + "/blob/");
+    	this.icon += "?raw=true";
+    }
 }
 
 Project.prototype.createCard = function(parent, reverse) {
@@ -56,4 +61,8 @@ Project.prototype.createCard = function(parent, reverse) {
 	this.info.html(this.information)
 		 .attr("class", "project-info");
 	cell.append(this.info);
+	
+	this.root.on("click", function() {
+		openPage("projects/" + this.page + "/");
+	}.bind(this));
 }

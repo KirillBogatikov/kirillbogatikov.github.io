@@ -2,6 +2,7 @@
  * Auto Fixes Per Second
  */
 const AFPS = 25;
+const GITHUB_ACCOUNT_LINK = "https://github.com/KirillBogatikov";
 /**
  * Storage onload callbacks
  */
@@ -30,6 +31,7 @@ function startAutoFix() {
 		lastScreen.width = screen.width;
 		lastScreen.height = screen.height;
 		
+		fixHeaderGitHubIcon();
 		fixSectionsPosition();
 		
 		if(customAutoFixes.length > 0) {
@@ -47,6 +49,12 @@ function fixHeaderWidth() {
 	var width = parseInt(header.width());
 	width -= 30;
 	header.width(width);
+}
+
+function fixHeaderGitHubIcon() {
+	var header = $("#header");
+	var headerGitHub = $("#header-github");
+	headerGitHub.width(header.height());
 }
 
 function fixSectionsPosition() {
@@ -72,4 +80,13 @@ function fetchJson(url) {
 		return file;
 	}
 	return JSON.parse(file.responseText);
+}
+
+
+function openPage(uri) {
+	var a = $("<a href='" + uri + "'>AAAA</a>");
+	var body = $(document.body);
+	body.append(a);
+	a[0].click();
+	a.remove();
 }

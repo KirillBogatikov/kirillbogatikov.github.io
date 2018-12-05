@@ -9,7 +9,7 @@
     "platform":[],
     "dependences":[],
     "tools":["Java 7+"],
-    "icon":"img/projects/json_parser.png"
+    "icon":"repo:dev/json_parser.png"
 },{
     "name":"Magic Library",
     "page":"magiclib",
@@ -21,17 +21,41 @@
     "platform":["Desktop"],
     "dependences":["AWT", "Swing"],
     "tools":["Java 7+"],
-    "icon":"img/projects/magic_library.png"
+    "icon":"repo:dev/magic_library.png"
 },{
     "name":"Camellia Library",
     "page":"camellia",
     "repository":"CamelliaLibrary",
     "information":{
         "en":"",
-        "ru":""
+        "ru":"Что? Не хватает полезных, но простых инструментов? Устали в каждом новом проекте снова реализовывать одни и те же примитивные вещи? Тогда вам точно подабоится Камелия. Да, цветок, неасомненно, красивый, а проект, что гордо носит его на своей иконке ещё и жутко полезный! Несколько легких и простых элементов GUI, их простая но мощная стилизация и многое другое уже &quot;под капотом&quot; этой крошки)"
     },
     "platform":["Android"],
     "dependeces":[],
-    "tools":["Android API 11+"],
-    "icon":"img/projects/magic_library_android.png"
+    "tools":["Android 11+"],
+    "icon":"repo:dev/icon.png"
+}, {
+    "name":"Nice Player",
+    "page":"niceplayer",
+    "repository":"NicePlayer",
+    "information":{
+        "en":"",
+        "ru":"Простой, легкий, быстрый и красивый медиаплеер для вашего смартфона! Слушайте любимую музыку на своем смартфоне, а для особых ценителей прекрасного - Nice Player содержит встроенный клиент сервиса <a href='retrowave.ru'>Retrowave Radio</a>"
+    },
+    "platform":["Android"],
+    "dependences":["Camellia Library"],
+    "tools":["Android 11+"],
+    "icon":"repo:master/ic_launcher-web.png"
+},{
+    "name":"Business Rick Man",
+    "page":"riskman",
+    "repository":"BusinessRiskMan",
+    "information":{
+        "en":"",
+        "ru":"Хотите ненадолго почувствовать себя бизнесменом в условиях непредсказуемого (а может и нет) рынка? Тогда эта игра точно для вас! Пошаговая стратегия позволит вам прочувствовать сладки вкус получения прибыли и всю горечь расходов на этих проходимцев юристов и на оплату штрафов... А казалось, чего тут сложного?"
+    },
+    "platform":["Android"],
+    "dependences":["Camellia Library"],
+    "tools":["Android 11+"],
+    "icon":"repo:master/ic_launcher-web.png"
 }]

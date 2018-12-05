@@ -66,6 +66,10 @@ H3 {
 	margin-left: 25px;
 }
 
+#header-github {
+	width: 0px;
+}
+
 .section {
     width: 70%;
     padding: 15px;
