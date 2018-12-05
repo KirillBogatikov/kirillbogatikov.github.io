@@ -33,7 +33,11 @@ BODY {
 
 H1 {
 	font-family: CaptureIt;
-	font-size: 150%;
+	font-size: 175%;
+}
+
+H3 {
+    font-family: CaptureIt;
 }
 
 #header {

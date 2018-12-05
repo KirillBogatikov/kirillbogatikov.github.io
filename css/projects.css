@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+#project-cards {
+	width: 100%;
+}
+
+.project-root {
+	width: 100%;
+}
+
+.project-icon {
+	width: 100%;
+	float:left;
+}
+
+.project-title {
+	font-size:135%;
+	font-family: TavridaAd;
+}
+
+.project-info {
+	font-size: 80%;
+}

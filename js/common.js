@@ -8,6 +8,8 @@ const AFPS = 25;
 customOnloads = [];
 customAutoFixes = [];
 
+LANGUAGE = "ru";
+
 onload = function() {
 	startAutoFix();
 	
@@ -51,4 +53,23 @@ function fixSectionsPosition() {
 	var preview = $("#preview");
 	var header = $("#header");
 	preview.css("padding-top", header.height() + 45);
+}
+
+function fetchFile(url) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, false);
+	xhr.send(null);
+
+	if (xhr.status != 200) {
+		return [xhr.status, xhr.statusText];
+	}
+	return xhr;
+}
+
+function fetchJson(url) {
+	var file = fetchFile(url);
+	if(typeof file == 'array') {
+		return file;
+	}
+	return JSON.parse(file.responseText);
 }

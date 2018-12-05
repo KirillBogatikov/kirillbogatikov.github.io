@@ -1,6 +1,33 @@
 customOnloads.push(function() {
+	loadProjects();
 	initiateSlider();
 });
+
+function loadProjects() {
+	PROJECTS = [];
+	var raw = fetchJson("/projects/summary.json?2");
+	
+	var table = $("<table id=\"project-cards\"></table>");
+	$("#projects").append(table);
+	var row;
+	
+	for(var pid in raw) {
+		var project = new Project(raw[pid]);
+		PROJECTS.push(project);
+		
+		if(pid % 2 == 0) {
+			row = $("<tr></tr>");
+			table.append(row);
+		}
+		
+		var cell = $("<td width=\"50%\"></td>");
+		row.append(cell);
+		project.createCard(cell, pid % 2 != 0);
+	}
+	
+	
+	
+}
 
 function initiateSlider() {
 	var width = Math.floor($("#preview").width() * 0.80);

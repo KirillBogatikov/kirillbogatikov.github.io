@@ -1,0 +1,37 @@
+[{
+    "name":"Json Parser",
+    "page":"jparser",
+    "repository":"JsonParser",
+    "information":{
+        "en":"",
+        "ru":"Скромное, лёгкое и простое средство для конвертирования данных из формата JSON в объекты языка Java и обратно. Имеет встроенные средства для получения JSON-данных из файла сразу в виде объектов, а также для записи объектов в файл. Также разработчик получает возможность &quot;надувать&quot; объекты"
+    },
+    "platform":[],
+    "dependences":[],
+    "tools":["Java 7+"],
+    "icon":"img/projects/json_parser.png"
+},{
+    "name":"Magic Library",
+    "page":"magiclib",
+    "repository":"MagicLibrary",
+    "information":{
+        "en":"",
+        "ru":"Такого проекта Вы ещё не встречали! Масштабы моей работы трудно описать словами - ведь я хочу... Новый GUI для Java-разработчиков! Кроссплатформенный, гибкий, мощный и простой в использовании! Больше никаких велосипедов и костылей, только широкий выбор инструментов - от кнопки и текста до вкладок и самостоятельных окон!"
+    },
+    "platform":["Desktop"],
+    "dependences":["AWT", "Swing"],
+    "tools":["Java 7+"],
+    "icon":"img/projects/magic_library.png"
+},{
+    "name":"Camellia Library",
+    "page":"camellia",
+    "repository":"CamelliaLibrary",
+    "information":{
+        "en":"",
+        "ru":""
+    },
+    "platform":["Android"],
+    "dependeces":[],
+    "tools":["Android API 11+"],
+    "icon":"img/projects/magic_library_android.png"
+}]

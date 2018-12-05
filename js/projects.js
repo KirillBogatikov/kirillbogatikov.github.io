@@ -12,13 +12,48 @@ Project = function(data) {
     this.icon = data.icon;
 }
 
-Project.prototype.createHTML = function(parent) {
+Project.prototype.createCard = function(parent, reverse) {
 	this.parent = parent;
-	this.root = $("<div></div>");
-	this.parent.append
-	this.title = $("<h3></h3>");
-	this.title.html(this.name)
-			  .attr("class", "project-title")
-			  .width("100%");
-	this.
+	this.root = $("<table></table>");
+	this.root.attr("class", "project-root");
+	this.parent.append(this.root);
+	
+	var row = $("<tr></tr>");
+	var cell;
+	this.root.append(row);
+	
+	var genIcon = function() {
+		cell = $("<td></td>");
+		row.append(cell);
+		cell.attr("rowspan", 2)
+			.width("25%");
+		this.logo = $("<img/>");
+		this.logo.attr("src", this.icon)
+				 .attr("class", "project-icon");
+		cell.append(this.logo);
+	}.bind(this);
+	
+	var genTitle = function() {
+		this.title = $("<td></td>");
+		row.append(this.title);
+		this.title.html(this.name)
+				  .attr("class", "project-title");
+	}.bind(this);
+	
+	if(reverse) {
+		genTitle();
+		genIcon();
+	} else {
+		genIcon();
+		genTitle();
+	}
+	
+	row = $("<tr></tr>");
+	this.root.append(row);
+	cell = $("<td></td>");
+	row.append(cell);
+	this.info = $("<div></div>");
+	this.info.html(this.information)
+		 .attr("class", "project-info");
+	cell.append(this.info);
 }
