@@ -62,7 +62,5 @@ Project.prototype.createCard = function(parent, reverse) {
 		 .attr("class", "project-info");
 	cell.append(this.info);
 	
-	this.root.on("click", function() {
-		openPage("projects/" + this.page + "/");
-	}.bind(this));
+	
 }

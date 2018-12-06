@@ -5,7 +5,7 @@ customOnloads.push(function() {
 
 function loadProjects() {
 	PROJECTS = [];
-	var raw = fetchJson("/projects/summary.json?2");
+	var raw = fetchJson("/projects/summary.json?3");
 	
 	var table = $("<table id=\"project-cards\"></table>");
 	$("#projects").append(table);
@@ -24,9 +24,6 @@ function loadProjects() {
 		row.append(cell);
 		project.createCard(cell, pid % 2 != 0);
 	}
-	
-	
-	
 }
 
 function initiateSlider() {

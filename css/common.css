@@ -70,6 +70,35 @@ H3 {
 	width: 0px;
 }
 
+A {
+	color: white;
+	text-decoration: none;
+}
+
+A:visited {
+	color: #ccc;
+}
+
+A:hover {
+	text-decoration: underline;
+}
+
+.anchor-link:visited {
+	color: white;
+}
+
+#fast-scroll-top {
+	width: 7%;
+	position:fixed;
+	left: 35px;
+	bottom: 35px;
+}
+
+#fast-scroll-top > A > IMG {
+	width: 100%;
+}
+
+
 .section {
     width: 70%;
     padding: 15px;
