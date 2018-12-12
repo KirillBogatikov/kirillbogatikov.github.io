@@ -16,22 +16,24 @@ Slider = function(parent, width, height, customRoot) {
 		 this.parent.append(this.root);
 	}
 	this.root.css("overflow", "hidden"); 
-	this.resize(width, height);
 	
 	this.container = $("<div></div>");
 	this.container.css("position", "relative")
 				  .css("overflowX", "visible")
 				  .height("100%");
 	this.root.append(this.container);
+	this.resize(width, height);
+
 }
 
 Slider.prototype.add = function(slide) {
 	this.slides.push(slide);
-	this.container.width(this.slides.length * this.slideWidth);
+	//this.container.width(this.slides.length * this.slideWidth);
+	this.container.width((this.slides.length * 100) + "%");
 	this.container.append(slide);
 }
 
-Slider.prototype.__swipe = function(forward) {
+Slider.prototype.__swipe = function(forward, force) {
 	var left;
 	if(forward) {
 		if(++this.currentSlide == this.slides.length) {
@@ -43,7 +45,7 @@ Slider.prototype.__swipe = function(forward) {
 		}
 	}
 	
-	this.container.animate({left:(this.currentSlide * -this.slideWidth)}, 400);
+	this.container.animate({left:(this.currentSlide * -this.root.width())}, force ? 0 : 400);
 }
 
 Slider.prototype.next = function() {
@@ -64,8 +66,11 @@ Slider.prototype.__autoSwipe = function() {
 }
 
 Slider.prototype.resize = function(width, height) {
-	this.root.width(width).height(height); 
-	this.slideWidth = parseInt(this.root.width());
+	this.root.width(width).height(height);
+	for(var key in this.slides) {
+		this.slides[key].width(width).height(height);
+	}
+	this.container.css("left", this.currentSlide * -this.root.width());
 }
 
 Slider.prototype.start = function(duration) {

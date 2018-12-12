@@ -1,28 +1,26 @@
-/**
- * Auto Fixes Per Second
- */
-const AFPS = 25;
+const APS = 25;
 const GITHUB_ACCOUNT_LINK = "https://github.com/KirillBogatikov";
 /**
  * Storage onload callbacks
  */
-customOnloads = [];
-customAutoFixes = [];
+var onresizes = [];
 
 LANGUAGE = "ru";
 
-onload = function() {
-	startAutoFix();
+function registerOnResize(fn) {
+	if(onresizes.indexOf(fn) == -1)
+		onresizes.push(fn);
+	else
+		throw "Already registered";
+}
+
+$(window).on("load", function() {
+	startOnResize();
 	
 	$(document).on("scroll", toggleFastScroll);
 	
-	if(customOnloads.length > 0) {
-		for(var id in customOnloads)
-			customOnloads[id]();
-	}
-	
 	applyAnchorsAnimation(".anchor-link");
-}
+});
 
 var lastScrollTop = -1;
 var fastScrollShowed = true;
@@ -50,7 +48,7 @@ var lastScreen = {
 	height: -1
 };
 
-function startAutoFix() {
+function startOnResize() {
 	if(lastScreen.width != screen.width || lastScreen.height != screen.height) {
 		lastScreen.width = screen.width;
 		lastScreen.height = screen.height;
@@ -58,13 +56,13 @@ function startAutoFix() {
 		fixHeaderWidth();
 		fixSectionsPosition();
 		
-		if(customAutoFixes.length > 0) {
-			for(var id in customAutoFixes)
-				customAutoFixes[id]();
+		if(onresizes.length > 0) {
+			for(var id in onresizes)
+				onresizes[id]();
 		}
 	}
 	
-	setTimeout(startAutoFix, 1000 / AFPS);
+	setTimeout(startOnResize, 1000 / APS);
 }
 
 function fixHeaderWidth() {

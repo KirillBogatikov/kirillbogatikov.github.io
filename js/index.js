@@ -1,6 +1,12 @@
-customOnloads.push(function() {
+$(window).on("load", function() {
 	loadProjects();
 	initiateSlider();
+	
+	registerOnResize(updateSlider);
+	
+	$(".contact-icon").on("click", function(e) {
+		document.location.href= $(e.currentTarget).attr("href");
+	});
 });
 
 function loadProjects() {
@@ -46,4 +52,13 @@ function initiateSlider() {
 	
 	$("#slider-last").on("click", slider.last.bind(slider));
 	$("#slider-next").on("click", slider.next.bind(slider));
+}
+
+function updateSlider() {
+	var width = Math.floor($("#preview").width() * 0.80);
+	var height = Math.floor(720 * width / 1280);
+	slider.resize(width, height);
+	
+	var size = Math.floor($("#preview").width() - width) / 2 - 30;
+	$(".slider-buttons").width(size).css("top", (height - size) / 2);
 }

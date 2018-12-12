@@ -35,3 +35,19 @@ BODY {
 	position: relative;
 	text-align: center;
 }
+
+#contacts {
+    background: url("../img/contacts_background.png");
+    color: white;
+}
+
+#contacts-list {
+    width: 100%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.contact-icon {
+    width: 17%;
+    border-radius: 50%;
+}
