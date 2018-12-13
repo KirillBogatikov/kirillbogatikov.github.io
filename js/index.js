@@ -42,19 +42,18 @@ function initiateCards() {
 
 function initiateSlider() {
 	var width = Math.floor($("#preview").width() * 0.80);
-	var height = Math.floor(720 * width / 1280);
 	
-	slider = new Slider($("#preview"), width, height, "#slider");
+	slider = new Slider($("#preview"), width, "#slider");
 	
 	for(var pid in PROJECTS) {
-		var preview = PROJECTS[pid].createPreview(width, height);
+		var preview = PROJECTS[pid].createPreview(width);
 		slider.add(preview.root);
 	}
 	
 	slider.start(3500);
 	
 	var size = Math.floor($("#preview").width() - width) / 2 - 30;
-	$(".slider-buttons").width(size).css("top", (height - size) / 2);
+	$(".slider-buttons").width(size).height(size).css("top", ($("#preview").height() - size) / 2);
 	
 	$("#slider-last").on("click", slider.last.bind(slider));
 	$("#slider-next").on("click", slider.next.bind(slider));

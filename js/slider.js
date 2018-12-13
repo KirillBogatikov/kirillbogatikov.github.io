@@ -3,7 +3,7 @@
  */
 SCROLLBAR_WIDTH = 0;
 
-Slider = function(parent, width, height, customRoot) {
+Slider = function(parent, width, customRoot) {
 	this.parent = parent;
 	
 	this.thread = null;
@@ -20,12 +20,12 @@ Slider = function(parent, width, height, customRoot) {
 	this.root.css("overflow", "hidden"); 
 	
 	this.container = $("<div></div>");
-	this.container.css("position", "absolute")
+	this.container.css("position", "relative")
 				  .css("overflowX", "visible")
 				  .css("z-index", 7)
-				  .height("100%");
+				  /*.height("100%");*/
 	this.root.append(this.container);
-	this.resize(width, height);
+	this.resize(width);
 }
 
 Slider.prototype.add = function(slide) {
@@ -73,10 +73,10 @@ Slider.prototype.__autoSwipe = function() {
 	this.thread = setTimeout(this.__autoSwipe.bind(this), this.duration);
 }
 
-Slider.prototype.resize = function(width, height) {
-	this.root.width(width).height(height);
+Slider.prototype.resize = function(width) {
+	this.root.width(width);
 	for(var key in this.slides) {
-		this.slides[key].width(width).height(height);
+		this.slides[key].width(width);
 	}
 	this.container.css("left", this.currentSlide * -this.root.width());
 }

@@ -71,7 +71,6 @@ Project.prototype.createPreview = function(width, height) {
 	
 	preview.root = $("<div></div>");
 	preview.root.width(width)
-				.height(height)
 				.attr("class", "project-preview-root");
 	
 	preview.title = $("<h1></h1>");
