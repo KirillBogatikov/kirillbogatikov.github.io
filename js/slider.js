@@ -6,6 +6,8 @@ SCROLLBAR_WIDTH = 0;
 Slider = function(parent, width, height, customRoot) {
 	this.parent = parent;
 	
+	this.thread = null;
+	
 	this.currentSlide = 0;
 	this.slides = [];
 	
@@ -18,17 +20,16 @@ Slider = function(parent, width, height, customRoot) {
 	this.root.css("overflow", "hidden"); 
 	
 	this.container = $("<div></div>");
-	this.container.css("position", "relative")
+	this.container.css("position", "absolute")
 				  .css("overflowX", "visible")
+				  .css("z-index", 7)
 				  .height("100%");
 	this.root.append(this.container);
 	this.resize(width, height);
-
 }
 
 Slider.prototype.add = function(slide) {
 	this.slides.push(slide);
-	//this.container.width(this.slides.length * this.slideWidth);
 	this.container.width((this.slides.length * 100) + "%");
 	this.container.append(slide);
 }
@@ -50,17 +51,24 @@ Slider.prototype.__swipe = function(forward, force) {
 
 Slider.prototype.next = function() {
 	this.stop();
+	var wasStarted = (this.thread != null);
 	this.__swipe(true);
-	this.start();
+	if(wasStarted) {
+		this.start();
+	}
 }
 
 Slider.prototype.last = function() {
 	this.stop();
+	var wasStarted = (this.thread != null);
 	this.__swipe(false);
-	this.start();
+	if(wasStarted) {
+		this.start();
+	}
 }
 
 Slider.prototype.__autoSwipe = function() {
+	console.log("WHO CALL ME?!");
 	this.__swipe(true);
 	this.thread = setTimeout(this.__autoSwipe.bind(this), this.duration);
 }

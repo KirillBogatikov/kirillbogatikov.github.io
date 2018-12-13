@@ -6,7 +6,7 @@ Project = function(data) {
 	this.page = data.page;
 	this.repository = data.repository;
     this.information = data.information[LANGUAGE];
-    this.platform = (data.platform.length == 0 ? null : data.platform);
+    this.platform = data.platform;
     this.dependences = data.dependences;
     this.tools = data.tools;
     this.icon = data.icon;
@@ -17,32 +17,34 @@ Project = function(data) {
     }
 }
 
-Project.prototype.createCard = function(parent, reverse) {
-	this.parent = parent;
-	this.root = $("<table></table>");
-	this.root.attr("class", "project-root");
-	this.parent.append(this.root);
+Project.prototype.createCard = function(reverse) {
+	if(this.card) return this.card;
+	
+	var card = this.card = {};
+	
+	card.root = $("<table></table>");
+	card.root.attr("class", "project-card-root");
 	
 	var row = $("<tr></tr>");
 	var cell;
-	this.root.append(row);
+	card.root.append(row);
 	
 	var genIcon = function() {
 		cell = $("<td></td>");
 		row.append(cell);
 		cell.attr("rowspan", 2)
 			.width("25%");
-		this.logo = $("<img/>");
-		this.logo.attr("src", this.icon)
-				 .attr("class", "project-icon");
-		cell.append(this.logo);
+		card.logo = $("<img/>");
+		card.logo.attr("src", this.icon)
+				 .attr("class", "project-card-icon");
+		cell.append(card.logo);
 	}.bind(this);
 	
 	var genTitle = function() {
-		this.title = $("<td></td>");
-		row.append(this.title);
-		this.title.html(this.name)
-				  .attr("class", "project-title");
+		card.title = $("<td></td>");
+		row.append(card.title);
+		card.title.html(this.name)
+				  .attr("class", "project-card-title");
 	}.bind(this);
 	
 	if(reverse) {
@@ -54,13 +56,58 @@ Project.prototype.createCard = function(parent, reverse) {
 	}
 	
 	row = $("<tr></tr>");
-	this.root.append(row);
+	card.root.append(row);
 	cell = $("<td></td>");
 	row.append(cell);
-	this.info = $("<div></div>");
-	this.info.html(this.information)
-		 .attr("class", "project-info");
-	cell.append(this.info);
+	card.info = $("<div></div>");
+	card.info.html(this.information)
+		 .attr("class", "project-card-info");
+	cell.append(card.info);
+	return card;
+}
+
+Project.prototype.createPreview = function(width, height) {
+	var preview = this.preview = {};
 	
+	preview.root = $("<div></div>");
+	preview.root.width(width)
+				.height(height)
+				.attr("class", "project-preview-root");
 	
+	preview.title = $("<h1></h1>");
+	preview.title.html(this.name)
+				 .attr("class", "project-preview-title");
+	preview.root.append(preview.title);
+	
+	preview.icon_container = $("<div></div>");
+	preview.icon_container.attr("class", "project-preview-icon-container");
+	preview.root.append(preview.icon_container);
+	
+	preview.icon = $("<img/>");
+	preview.icon.attr("src", this.icon)
+				.attr("class", "project-preview-icon");
+	preview.icon_container.append(preview.icon);
+	
+	preview.info = $("<div></div>");
+	preview.info.attr("class", "project-preview-text")
+				.html(this.information);
+	preview.root.append(preview.info);
+	
+	preview.details = $("<button></button>");
+	preview.details.attr("class", "project-preview-button")
+				   .html("Детали проекта")
+				   .on("click", function() {
+					   animateScrollingTo(this.createCard().root.parent());
+				   }.bind(this));
+	preview.root.append(preview.details).append($("<p>"));
+	
+	preview.details = $("<button disabled></button>");
+	preview.details.attr("class", "project-preview-button")
+				   .html("На страницу проекта")
+				   .on("click", function() {
+					   openPage("projects/" + this.page);
+				   }.bind(this));
+	preview.root.append(preview.details);
+	
+	return preview;
 }

@@ -4,20 +4,89 @@
 	width: 100%;
 }
 
-.project-root {
+.project-card-root {
 	width: 100%;
 }
 
-.project-icon {
+.project-card-icon {
 	width: 100%;
 	float:left;
 }
 
-.project-title {
+.project-card-title {
 	font-size:135%;
 	font-family: TavridaAd;
 }
 
-.project-info {
+.project-card-info {
 	font-size: 80%;
+}
+
+.project-preview-root {
+	position: relative;
+	float: left;
+	color: white;    
+}
+
+.project-preview-icon-container {
+	position: absolute;
+    float: left;
+    width: 25%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-preview-icon {
+    width: 100%;	
+}
+
+.project-preview-title {
+	width: 100%;
+	
+	position: relative;
+    float: left;
+    
+    text-align: center;
+    font-family: TavridaAd;
+    font-size: 200%;
+}
+
+.project-preview-text {
+	width: 73%;
+	padding: 1%;
+	position: relative;
+	float: right;
+	text-align: center;
+}
+
+.project-preview-button {
+	width: 50%;
+	top: 10%;
+	left: 12.5%;
+	border: solid 1px white;
+	border-radius: 25px;
+	background: white;
+	box-shadow: 0 0 20px white;
+	color: black;
+	
+	padding: 7px;
+	
+	position: relative;
+    text-align: center;
+	
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.project-preview-button:disabled {
+	box-shadow: 0 0 10px #ccc;
+	background: #ccc;
+	border-color: #ccc;
+}
+
+.project-preview-button:hover {
+	box-shadow: 0 0 5px white;
 }

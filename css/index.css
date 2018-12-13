@@ -36,9 +36,14 @@ BODY {
 	text-align: center;
 }
 
-#contacts {
-    background: url("../img/contacts_background.png");
+#world-map {
+	background: black url("../img/contacts_background.png") no-repeat;
+    background-size: 100% auto;
     color: white;
+}
+
+#contacts {
+    
 }
 
 #contacts-list {

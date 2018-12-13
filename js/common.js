@@ -100,11 +100,12 @@ function fetchJson(url) {
 
 
 function openPage(uri) {
-	var a = $("<a href='" + uri + "'></a>");
+	/*var a = $("<a href='" + uri + "'></a>");
 	var body = $(document.body);
 	body.append(a);
 	a[0].click();
-	a.remove();
+	a.remove();*/
+	location.assign(uri);
 }
 
 function applyAnchorsAnimation(selector) {
@@ -116,17 +117,18 @@ function applyAnchorsAnimation(selector) {
 		} 
 	    event.preventDefault();
 
-	    var element = $(id);
-
-	    var minus = parseInt($("#header").height());
-	    minus += parseInt(element.css("padding-top"));
-	    minus += parseInt(element.css("margin-top"));
-	    
-	    var top = element.offset().top - minus;
-	    console.log(top);
-	    
-	    $(document.scrollingElement).animate({
-	    	scrollTop: Math.max(top, 0)
-	    }, 500);
+	    animateScrollingTo($(id));
 	});
+}
+
+function animateScrollingTo(child) {
+	var minus = parseInt($("#header").height());
+    minus += parseInt(child.css("padding-top"));
+    minus += parseInt(child.css("margin-top"));
+    
+    var top = child.offset().top - minus;
+    
+    $(document.scrollingElement).animate({
+    	scrollTop: Math.max(top, 0)
+    }, 500);
 }

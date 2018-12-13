@@ -1,6 +1,7 @@
 $(window).on("load", function() {
 	loadProjects();
 	initiateSlider();
+	initiateCards();
 	
 	registerOnResize(updateSlider);
 	
@@ -11,24 +12,31 @@ $(window).on("load", function() {
 
 function loadProjects() {
 	PROJECTS = [];
-	var raw = fetchJson("/projects/summary.json?3");
-	
-	var table = $("<table id=\"project-cards\"></table>");
-	$("#projects").append(table);
-	var row;
+	var raw = fetchJson("/projects/summary.json?4");
 	
 	for(var pid in raw) {
 		var project = new Project(raw[pid]);
 		PROJECTS.push(project);
-		
+	}
+}
+
+function initiateCards() {
+	var table = $("<table id=\"project-cards\"></table>");
+	$("#projects").append(table);
+	var row;
+	
+	for(var pid in PROJECTS) {
+		var reverse = true;
 		if(pid % 2 == 0) {
+			reverse = false;
 			row = $("<tr></tr>");
 			table.append(row);
 		}
 		
 		var cell = $("<td width=\"50%\"></td>");
 		row.append(cell);
-		project.createCard(cell, pid % 2 != 0);
+		var card = PROJECTS[pid].createCard(reverse);
+		cell.append(card.root);
 	}
 }
 
@@ -38,11 +46,9 @@ function initiateSlider() {
 	
 	slider = new Slider($("#preview"), width, height, "#slider");
 	
-	for(var i = 1; i < 6; i++) {
-		var div = $("<img/>")
-		div.attr("src", "/img/preview/" + i + ".png");
-		div.width(width);
-		slider.add(div);
+	for(var pid in PROJECTS) {
+		var preview = PROJECTS[pid].createPreview(width, height);
+		slider.add(preview.root);
 	}
 	
 	slider.start(3500);
