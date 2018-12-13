@@ -61,9 +61,8 @@ function initiateSlider() {
 
 function updateSlider() {
 	var width = Math.floor($("#preview").width() * 0.80);
-	var height = Math.floor(720 * width / 1280);
-	slider.resize(width, height);
+	slider.resize(width);
 	
 	var size = Math.floor($("#preview").width() - width) / 2 - 30;
-	$(".slider-buttons").width(size).css("top", (height - size) / 2);
+	$(".slider-buttons").width(size).height(size).css("top", ($("#preview").height() - size) / 2);
 }
