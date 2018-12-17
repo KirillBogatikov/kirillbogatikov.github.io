@@ -1,0 +1,20 @@
+#container {
+	height: 100%;
+	position: fixed;
+	
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#message {
+	width: 50%;
+	display: inline-block;
+}
+
+#error-picture {
+	width: 50%;
+	height: auto;
+	display: inline-block;
+}

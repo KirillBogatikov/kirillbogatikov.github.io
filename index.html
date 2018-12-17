@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Kirill Bogatikov</title>
-		<link rel="stylesheet" href="css/common.css"/>
-		<link rel="stylesheet" href="css/index.css"/>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kirill Bogatikov</title>
+        
+        <link rel="stylesheet" href="css/common.css"/>
+        <link rel="stylesheet" href="css/index.css"/>
         <link rel="stylesheet" href="css/projects.css"/>
         
-		<script src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="js/common.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/projects.js"></script>
         <script src="js/index.js"></script>
-	</head>
-	<body>
-		<a name="top" id="top"></a>
-		<div id="header">
-			<div class="left-text">Кирилл Богатиков</div>
-			<div class="right-text">
-			    <a class="anchor-link" href="#contacts">Контакты</a>
-			</div>
-			<div class="right-text">
-			    <a class="anchor-link" href="#projects">Проекты</a>
-			</div>
-			<div class="right-text">
+    </head>
+    <body>
+        
+        <a name="top" id="top"></a>
+        <div id="header">
+            <div class="left-text">Кирилл Богатиков</div>
+            <div class="right-text">
+                <a class="anchor-link" href="#contacts">Контакты</a>
+                <a class="anchor-link" href="#projects">Проекты</a>
                 <a class="anchor-link" href="#about">О себе</a>
             </div>
         </div>
-		<div id="preview" class="section">
-			<img id="slider-last" class="slider-buttons" src="img/slider-last.png"/>
-			<img id="slider-next" class="slider-buttons" src="img/slider-next.png"/>
-			<div id="slider"></div>
-		</div>
-		<div id="about" class="section">
-			<h1>О себе</h1>
-			<p>Буду краток: я родился в небольшом, но очень красивом городе Пенза. Учусь в местном колледже, как не странно на программиста.<br>
-			   Однако программированием я начал увлекаться ещё в 2012 году. Мой тернистый путь познания начался с языка <i>JavaScript</i>. Узнав основы программирования, я прознал про &quot;крутых мужиков&quot;, что пишут на серьёзном <i>C++</i>. Так я начал учить свой второй язык. И снова самостоятельно!<br>
-			   Ну а в 2015 я влюбился в язык <i>Java</i> и понял, что останусь с ним на долгие времена...<br>
-			   Поступив в 2016 году в колледж, и побывав в 2017 году на первом в своей жизни соревновании по спортивному программированию и вкусил сласть таких мероприятий!<br> 
-			   Сейчас я занимаюсь разработкой веб-сервисов на ванильных <i>HTML / CSS / PHP</i>, да-да без всяких фреймворков, за исключением <i>jQuery</i>. Также увлекаюсь мобильной разработкой на <i>Java</i> под <i>ОС Android</i>.<br>
-			   Разрабатываю несколько довольно крупных для меня проектов, которые в дальнейшем помогут мне реализовывать мои идеи проще, быстрее и лучше! Очень надеюсь, что эти разработки понадобятся и пригодятся кому-то ещё! Двери моих репозиториев открыты для всех!
-		    </p>
-		</div>
+        <div id="preview" class="section">
+            <img id="slider-last" class="slider-buttons" src="img/slider-last.png" alt="Last preview button"/>
+            <img id="slider-next" class="slider-buttons" src="img/slider-next.png" alt="Next preview button"/>
+            <div id="slider"></div>
+        </div>
+        <div id="about" class="section">
+            <h1>О себе</h1>
+            <p>
+               Буду краток: я родился в небольшом, но очень красивом городе Пенза. Учусь в местном колледже, как не странно на программиста.
+            </p>
+            <p>
+               Однако программированием я начал увлекаться ещё в 2012 году. Мой тернистый путь познания начался с языка <i>JavaScript</i>. Узнав основы программирования, я прознал про &quot;крутых мужиков&quot;, что пишут на серьёзном <i>C++</i>. Так я начал учить свой второй язык. И снова самостоятельно!<br>
+               Ну а в 2015 я влюбился в язык <i>Java</i> и понял, что останусь с ним на долгие времена...<br>
+               Поступив в 2016 году в колледж и побывав в 2017 году на первом в своей жизни соревновании по спортивному программированию я вкусил сласть таких мероприятий!
+            </p> 
+            <p>
+               Сейчас я занимаюсь разработкой веб-сервисов на ванильных <i>HTML / CSS / PHP</i>, да-да без всяких фреймворков, за исключением <i>jQuery</i>. Также увлекаюсь мобильной разработкой на <i>Java</i> под <i>ОС Android</i>.<br>
+               Разрабатываю несколько довольно крупных для меня проектов, которые в дальнейшем помогут мне реализовывать мои идеи проще, быстрее и лучше! Очень надеюсь, что эти разработки понадобятся и пригодятся кому-то ещё! Двери моих репозиториев открыты для всех!
+            </p>
+            <p>
+               Я смело называю себя одним из последователей &quot;культа&quot; open-source разработки, потому что полностью согласен с тем, что Интернет и ПО должны принадлежать пользователям, а не частным компаниям!
+            </p>
+        </div>
         <div id="projects" class="section">
             <a name="projects"></a>
             <h1>Проекты</h1>
+            <div>
+                <p>Для перехода на страницу конкретного проекта просто кликните его &quot;карточку&quot;:</p>
+            </div>
         </div>
-		<div id="world-map" class="section">
-			<div id="contacts">
-	            <a name="contacts"></a>
-	            <h1>Контакты</h1>
-	            <div id="contacts-list">
-		            <img class="contact-icon" href="https://vk.com/kirill.bogatikov" src="img/icons/vk.png"/>
-		            <img class="contact-icon" href="https://facebook.com/kirill.bogatikov" src="img/icons/facebook.png"/>
-		            <img class="contact-icon" href="https://github.com/KirillBogatikov" src="img/icons/github.png"/>
-		            <img class="contact-icon" href="mailto:kivi15penza@gmail.com" src="img/icons/email.png"/>
-		            <img class="contact-icon" href="https://t.me/kirillbogatikov" src="img/icons/telegram.png"/>
-		        </div>
-			</div>
-			<div id="copyright">
-	            <a name="copyright"></a>
-	            <p>Copyright &copy; Кирилл Богатиков 2018 Все права защищены</p>
-	        </div>
-	    </div>
-        <div id="fast-scroll-top">
-            <a href="#top" class="anchor-link"><img src="img/anchor-top.png"/></a>
+        <div id="world-map" class="section">
+            <div id="contacts">
+                <a name="contacts"></a>
+                <h1>Контакты</h1>
+                <div id="contacts-list">
+                    <a href="https://vk.com/kirill.bogatikov">
+                        <img class="contact-icon" src="img/icons/vk.png" alt="VK icon"/>
+                    </a>
+                    <a href="https://facebook.com/kirill.bogatikov" >
+                        <img class="contact-icon" src="img/icons/facebook.png" alt="Facebook icon"/>
+                    </a>
+                    <a href="https://github.com/KirillBogatikov">
+                        <img class="contact-icon" src="img/icons/github.png" alt="GitHub icon"/>
+                    </a>
+                    <a href="mailto:kivi15penza@gmail.com">
+                        <img class="contact-icon" src="img/icons/email.png" alt="Email icon"/>
+                    </a>
+                    <a href="https://t.me/kirillbogatikov">
+                        <img class="contact-icon" src="img/icons/telegram.png" alt="Telegram icon"/>
+                    </a>
+                </div>
+            </div>
+            <div id="copyright">
+                <a name="copyright"></a>
+                <p>Copyright &copy; Кирилл Богатиков 2018 Все права защищены</p>
+            </div>
         </div>
     </body>
 </html>

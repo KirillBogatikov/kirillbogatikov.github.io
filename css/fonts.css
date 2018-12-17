@@ -4,21 +4,21 @@
 }
 
 @font-face {
-	font-family: MonotypeCorsiva;
-	src: url("../fonts/Monotype_Corsiva.ttf");
+    font-family: MonotypeCorsiva;
+    src: url("../fonts/Monotype_Corsiva.ttf");
 }
 
 @font-face {
-	font-family: ComicSans;
-	src: url("../fonts/Comic_Sans_MS.ttf");
+    font-family: ComicSans;
+    src: url("../fonts/Comic_Sans_MS.ttf");
 }
 
 @font-face {
-	font-family: Consolas;
-	src: url("../fonts/Consolas.ttf");
+    font-family: Consolas;
+    src: url("../fonts/Consolas.ttf");
 }
 
 @font-face {
-	font-family: OwnHand;
-	src: url("../fonts/OwnHand.ttf");
+    font-family: OwnHand;
+    src: url("../fonts/OwnHand.ttf");
 }

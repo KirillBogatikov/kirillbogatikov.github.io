@@ -1,5 +1,5 @@
 BODY {
-	
+    
 }
 
 #preview {
@@ -20,11 +20,11 @@ BODY {
 }
 
 .slider-buttons:hover {
-    background: rgba(255, 255, 255, 0.2);	
+    background: rgba(255, 255, 255, 0.2);    
 }
 
 #slider-last {
-	float: left;
+    float: left;
 }
 
 #slider-next {
@@ -32,14 +32,19 @@ BODY {
 }
 
 #slider {
-	position: relative;
-	text-align: center;
+    position: relative;
+    text-align: center;
 }
 
 #world-map {
-	background: black url("../img/contacts_background.png") no-repeat;
+    background: black url("../img/contacts_background.png") no-repeat;
     background-size: 100% auto;
     color: white;
+}
+
+#projects {
+	height: auto;
+    display: block;
 }
 
 #contacts {

@@ -1,9 +1,9 @@
 BODY {
-	background:linear-gradient(5deg, #343434 65%, #6F6F6F) no-repeat;
+    background:linear-gradient(5deg, #343434 65%, #6F6F6F) no-repeat;
 }
 
 .scrollable {
-	overflow:scroll;
-	box-shadow:0 0 10px;
+    overflow:scroll;
+    box-shadow:0 0 10px;
 }
 

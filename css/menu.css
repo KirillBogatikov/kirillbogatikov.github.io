@@ -1,42 +1,42 @@
 .menu {
-	color:white;
-	width:25%;
-	left:15%;
-	position:absolute;;
-	padding-top:10px;
+    color:white;
+    width:25%;
+    left:15%;
+    position:absolute;;
+    padding-top:10px;
 }
 
 .menu-item {
-	background:#000050;
-	text-align:center;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:10px;
-	padding-right:10px;
-	border-radius:30px;
-	box-shadow: 0px 0px 7px #000050;
+    background:#000050;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:30px;
+    box-shadow: 0px 0px 7px #000050;
 }
 
 .menu-item:hover {
-	background:#0026FF;
-	box-shadow: 0px 0px 10px #000050;
-	font-weight:bold;
+    background:#0026FF;
+    box-shadow: 0px 0px 10px #000050;
+    font-weight:bold;
 }
 
 .list {
-	color:white;
-	background:#000030;
-	//display:none;
+    color:white;
+    background:#000030;
+    //display:none;
 }
 
 .list-item {
-	width:100%;
+    width:100%;
 }
 
 .list-item:hover {
-	background:#000050;
+    background:#000050;
 }
 
 .menu-item-separator {
-	height:10px;
+    height:10px;
 }

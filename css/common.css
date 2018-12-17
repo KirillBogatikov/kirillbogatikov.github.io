@@ -25,15 +25,23 @@
     color: white;
 }
 
+* {
+    outline: none;
+}
+
+HTML, BODY {
+    height: 100%;
+}
+
 BODY {
-	margin: 0px;
-	font-size: 150%;
-	font-family: OwnHand;
+    margin: 0px;
+    font-size: 150%;
+    font-family: OwnHand;
 }
 
 H1 {
-	font-family: CaptureIt;
-	font-size: 175%;
+    font-family: CaptureIt;
+    font-size: 175%;
 }
 
 H3 {
@@ -41,61 +49,69 @@ H3 {
 }
 
 #header {
-	position: fixed;
-	top: 0px;
-	width: 100%;
-	padding: 15px;
-	background: rgba(0, 0, 0, 0.85);
-	box-shadow: 0 0 10px black;
-	color: white;
-	
-	font-family: CaptureIt;
-	font-size: 125%;
-	z-index: 10;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 10px black;
+    color: white;
+    
+    font-family: CaptureIt;
+    font-size: 125%;
+    z-index: 10;
 }
 
 .left-text {
-	position: relative;
-	float: left;
-	margin-right: 25px;
+    position: relative;
+    float: left;
+    margin-right: 25px;
 }
 
 .right-text {
-	position: relative;
-	float: right;
+    position: relative;
+    float: right;
+    margin-left: 25px;
+}
+
+.right-text > * {
 	margin-left: 25px;
 }
 
+.undefined-nav {
+	display: none;
+}
+
 #header-github {
-	width: 0px;
+    width: 0px;
 }
 
 A {
-	color: white;
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 A:visited {
-	color: #ccc;
+    color: #ccc;
 }
 
 A:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .anchor-link:visited {
-	color: white;
+    color: white;
 }
 
 #fast-scroll-top {
-	width: 7%;
-	position:fixed;
-	left: 35px;
-	bottom: 35px;
+    width: 7%;
+    position:fixed;
+    left: 35px;
+    bottom: 35px;
 }
 
 #fast-scroll-top > A > IMG {
-	width: 100%;
+    width: 100%;
 }
 
 
@@ -108,4 +124,31 @@ A:hover {
     position: relative;
     display: block;
     text-align: center;
+}
+
+.button-light {
+    width: 50%;
+    border: solid 3px white;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0px 0px 20px white;
+    color: black;
+    
+    padding: 4px;
+    
+    position: relative;
+    text-align: center;
+    
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.button-light:disabled {
+    box-shadow: 0 0 10px #ccc;
+    background: #ccc;
+    border-color: #ccc;
+}
+
+.button-light:hover {
+    box-shadow: 0 0 10px white;
 }

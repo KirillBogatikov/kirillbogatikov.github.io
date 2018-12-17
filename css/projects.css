@@ -1,35 +1,40 @@
 @CHARSET "UTF-8";
 
-#project-cards {
-	width: 100%;
+.project-card-root {
+    width: 48%;
+    position:relative;
+    //float: left;
+    display: inline-block;
+    padding: 1%;
 }
 
-.project-card-root {
-	width: 100%;
+.project-card-root:hover {
+	background: #EAEAEA;
+	border-radius: 25px;
+	box-shadow: 0px 0px 50px #CCCCCC;
 }
 
 .project-card-icon {
-	width: 100%;
-	float:left;
+    width: 30%;
 }
 
 .project-card-title {
-	font-size:135%;
-	font-family: TavridaAd;
+    font-size:135%;
+    font-family: TavridaAd;
 }
 
-.project-card-info {
-	font-size: 80%;
+.project-card-content {
+    font-size: 80%;
 }
 
 .project-preview-root {
-	position: relative;
-	float: left;
-	color: white;    
+    position: relative;
+    float: left;
+    color: white;    
 }
 
 .project-preview-icon-container {
-	position: absolute;
+    position: absolute;
     float: left;
     width: 25%;
     height: 100%;
@@ -40,13 +45,13 @@
 }
 
 .project-preview-icon {
-    width: 100%;	
+    width: 100%;    
 }
 
 .project-preview-title {
-	width: 100%;
-	
-	position: relative;
+    width: 100%;
+    
+    position: relative;
     float: left;
     
     text-align: center;
@@ -55,38 +60,14 @@
 }
 
 .project-preview-text {
-	width: 73%;
-	padding: 1%;
-	position: relative;
-	float: right;
-	text-align: center;
+    width: 73%;
+    padding: 1%;
+    position: relative;
+    float: right;
+    text-align: center;
 }
 
 .project-preview-button {
-	width: 50%;
-	top: 10%;
-	left: 12.5%;
-	border: solid 1px white;
-	border-radius: 25px;
-	background: white;
-	box-shadow: 0 0 20px white;
-	color: black;
-	
-	padding: 7px;
-	
-	position: relative;
-    text-align: center;
-	
-	font-family: inherit;
-	font-size: inherit;
-}
-
-.project-preview-button:disabled {
-	box-shadow: 0 0 10px #ccc;
-	background: #ccc;
-	border-color: #ccc;
-}
-
-.project-preview-button:hover {
-	box-shadow: 0 0 5px white;
+    top: 10%;
+    left: 12.5%;
 }
