@@ -37,13 +37,6 @@ $(window).on("load", function() {
     });
     //add animation to all elements with class anchor-link
     setScrollToAnimation(".anchor-link");
-    
-    if(location.search == "") {
-	$("#go-index-left").fadeIn();
-    } else {
-	$("#go-back").fadeIn();
-	$("#go-index-right").fadeIn();
-    }
 });
 
 var lastScrollTop = -1;
@@ -155,7 +148,10 @@ function openPage(uri) {
 	    url: uri,
 	    method: "HEAD"
 	}).done(function(data) {
-	    location.assign(uri + "?yes");
+	    if(~uri.indexOf("#")) uri = uri.replace("#", "?yes#")
+	    else uri += "?yes";
+	    
+	    location.assign(uri);
 	}).fail(function(xhr) {
 	    var page = "unknown.html?" + xhr.status;
 	    if(~SUPPORTED_ERRORS.indexOf(xhr.status)) {
