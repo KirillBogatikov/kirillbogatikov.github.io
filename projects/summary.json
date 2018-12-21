@@ -9,7 +9,8 @@
     "platform":["Java SE"],
     "dependences":[],
     "tools":["Java 7+"],
-    "icon":"repo:dev/json_parser.png"
+    "icon":"repo:dev/json_parser.png",
+    "binary":[]
 },{
     "name":"Magic Library",
     "page":"magiclib",
@@ -21,7 +22,8 @@
     "platform":["Desktop"],
     "dependences":["AWT", "Swing"],
     "tools":["Java 7+"],
-    "icon":"repo:dev/magic_library.png"
+    "icon":"repo:dev/magic_library.png",
+    "binary":[]
 },{
     "name":"Camellia Library",
     "page":"camellia",
@@ -33,7 +35,8 @@
     "platform":["Android"],
     "dependences":[],
     "tools":["Android 11+"],
-    "icon":"repo:dev/icon.png"
+    "icon":"repo:dev/icon.png",
+    "binary":[]
 }, {
     "name":"Nice Player",
     "page":"niceplayer",
@@ -45,7 +48,8 @@
     "platform":["Android"],
     "dependences":["Camellia Library"],
     "tools":["Android 11+"],
-    "icon":"repo:master/ic_launcher-web.png"
+    "icon":"repo:master/ic_launcher-web.png",
+    "binary":[]
 },{
     "name":"Business Rick Man",
     "page":"riskman",
@@ -57,5 +61,6 @@
     "platform":["Android"],
     "dependences":["Camellia Library"],
     "tools":["Android 11+"],
-    "icon":"repo:master/ic_launcher-web.png"
+    "icon":"repo:master/ic_launcher-web.png",
+    "binary":[]
 }]

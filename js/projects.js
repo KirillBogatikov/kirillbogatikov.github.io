@@ -107,3 +107,17 @@ Project.prototype.createPreview = function(width) {
     
     return preview;
 }
+
+function loadProjectsJson(project) {
+    var json = fetchJson("/projects/summary.json");
+    if(typeof(project) == "number") { 
+	return json[project];
+    } else if(project) {
+	for(var i in json) {
+	    if(json[i].page == project) {
+		return json[i];
+	    }
+	}
+    }
+    return json;
+}

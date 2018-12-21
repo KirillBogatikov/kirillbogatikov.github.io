@@ -143,24 +143,21 @@ function fetchJson(url) {
  * opens specified link in current tab and adds record to history
  */
 function openPage(uri) {
-    if(uri.indexOf(/(ht|f)tp(s?)/) == -1) {
+    if(uri.match("(ht|f)tp(s?):")) {
+	location.assign(uri);
+    } else {
 	$.ajax({
 	    url: uri,
 	    method: "HEAD"
 	}).done(function(data) {
-	    if(~uri.indexOf("#")) uri = uri.replace("#", "?yes#")
-	    else uri += "?yes";
-	    
 	    location.assign(uri);
 	}).fail(function(xhr) {
 	    var page = "unknown.html?" + xhr.status;
 	    if(~SUPPORTED_ERRORS.indexOf(xhr.status)) {
-		page = xhr.status + ".html?yes";
+		page = xhr.status + ".html";
 	    }
 	    location.assign("/error/" + page);
 	});
-    } else {
-	location.assign(uri);
     }
 }
 

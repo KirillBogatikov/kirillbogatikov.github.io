@@ -9,7 +9,7 @@ $(window).on("load", function() {
 
 function loadProjects() {
     PROJECTS = [];
-    var raw = fetchJson("/projects/summary.json?6");
+    var raw = loadProjectsJson();
     
     for(var pid in raw) {
         var project = new Project(raw[pid]);
