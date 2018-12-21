@@ -111,11 +111,11 @@ Project.prototype.createPreview = function(width) {
 function loadProjectsJson(project) {
     var json = fetchJson("/projects/summary.json");
     if(typeof(project) == "number") { 
-	return json[project];
+	return new Project(json[project]);
     } else if(project) {
 	for(var i in json) {
 	    if(json[i].page == project) {
-		return json[i];
+		return new Project(json[i]);
 	    }
 	}
     }

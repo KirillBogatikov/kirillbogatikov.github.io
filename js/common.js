@@ -32,7 +32,6 @@ $(window).on("load", function() {
     
     $(document.body).on("click", "A", function(e) {
 	e.preventDefault();
-	console.log(e);
 	openPage(e.currentTarget.href);
     });
     //add animation to all elements with class anchor-link
@@ -78,6 +77,7 @@ function startOnResize() {
         lastScreen.height = screen.height;
         
         fixHeaderWidth();
+        fixHeaderNavigation();
         fixSectionsPosition();
         
         if(onresizes.length > 0) {
@@ -101,6 +101,37 @@ function fixHeaderWidth() {
     width -= (parseFloat(header.css("padding-left")) + parseFloat(header.css("padding-right")));
     header.width(width);
 }
+
+function fixHeaderNavigation() {
+    var header = $("#header");
+    var leftBlock = header.children(".left-text");
+    var rightBlock = $("#navigation");
+    
+    links = rightBlock.children(".anchor-link");
+    
+    var maxwidth = header.width() - leftBlock.width() * 1.33;
+    
+    if(rightBlock.width() < maxwidth) {
+	var i = 0;
+	var f = function() {
+	    if(rightBlock.width() < maxwidth && i < links.length) {
+    	    	$(links[i]).fadeIn(0, f);
+    	    	i++;
+	    }
+	};
+	f();
+    } else {
+	var i = 0;
+	var f = function() {
+	    if(rightBlock.width() > maxwidth && i < links.length) {
+		$(links[i]).fadeOut(0, f);
+		i++;
+	    }
+	};
+	f();
+    }
+};
+
 
 /**
  * fixes sections position: shift all to header height pixels to bottom

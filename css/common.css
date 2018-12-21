@@ -18,13 +18,13 @@
 ::selection {
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    text-decoration: italic;
+    font-style: italic;
 }
 
 ::-moz-selection {
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    text-decoration: italic;
+    font-style: italic;
 }
 
 * {
@@ -80,6 +80,10 @@ H3 {
 	margin-left: 25px;
 }
 
+.hidden-menu {
+	opacity: 0;
+}
+
 .undefined-nav {
 	display: none;
 }
@@ -127,6 +131,10 @@ A:hover {
     position: relative;
     display: block;
     text-align: center;
+}
+
+.subsection {
+	display:inline-block;
 }
 
 .button-light {
@@ -181,4 +189,9 @@ A:hover {
 
 .button-dark:hover {
     box-shadow: 0 0 10px black;
+}
+
+.aligned-list {
+	text-align: left;
+	margin-left: 20%;
 }
