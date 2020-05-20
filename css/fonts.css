@@ -1,24 +1,25 @@
-@font-face {
-    font-family: Nickainley;
-    src: url("../fonts/Nickainley.otf");
+@charset "UTF-8";
+
+@font-face
+{
+    font-family: 'Aqum';
+    src: url('../fonts/Aqum.ttf');
 }
 
-@font-face {
-    font-family: MonotypeCorsiva;
-    src: url("../fonts/Monotype_Corsiva.ttf");
+@font-face
+{
+    font-family: 'Gagalin';
+    src: url('../fonts/Gagalin.otf');
 }
 
-@font-face {
-    font-family: ComicSans;
-    src: url("../fonts/Comic_Sans_MS.ttf");
+@font-face
+{
+    font-family: 'BloggerSans';
+    src: url('../fonts/Blogger Sans.ttf');
 }
 
-@font-face {
-    font-family: Consolas;
-    src: url("../fonts/Consolas.ttf");
-}
-
-@font-face {
-    font-family: OwnHand;
-    src: url("../fonts/OwnHand.ttf");
+@font-face
+{
+    font-family: 'CaptureIt';
+    src: url('../fonts/Capture It.ttf');
 }

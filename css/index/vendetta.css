@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+#vendetta .left
+{
+    width: 64%;
+    height: 100%;
+    color: white;
+    position: relative;
+    float: left;
+    font-family: Aqum;
+    color: #99441A;
+}
+
+#vendetta .crossplatform
+{
+	width: 100%;
+}
+
+#vendetta .standartlib
+{
+	width: 90%;
+}
+
+#vendetta .title
+{
+	font-family: CaptureIt;
+	display: block;
+	margin-top: 15px;
+	font-size: 135%;
+}
+
+#vendetta .details
+{
+	font-family: Calibri;
+	display: block;
+}
+
+#vendetta .details ul
+{
+	font-size: 85%;
+}
+
+#vendetta .services
+{
+    width: 30%;
+    font-size: 80%;
+    margin-top: 2%;
+}
+
+#vendetta .name
+{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+#vendetta .name P 
+{
+    font-size: 85%;
+}
+
+#vendetta .contacts
+{
+    width: 100%;
+    padding-top: 1%;
+}
+
+#vendetta .contacts IMG
+{
+    width: 100px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #cc5d22;
+    float: left;
+    margin-right: 2%;
+}
+
+#vendetta .contacts .github
+{
+    border-radius: 50%;    
+}
+
+#vendetta .right 
+{
+    width: 40%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    color: #7f0000;
+    font-family: Capture It;
+}
+
+#vendetta .gui
+{
+	margin-top: 5%;
+	width: 75%;
+	margin-left: 25%;
+}
+
+#vendetta .status
+{
+	margin-top: 5%;
+	width: 85%;
+	margin-left: 15%;
+}
+
+#vendetta .top_secret 
+{
+	width: 200px;	
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+}

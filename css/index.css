@@ -1,63 +1,12 @@
-BODY {
-    
-}
+@charset "UTF-8";
+@import url("index/title.css");
+@import url("index/projector.css");
+@import url("index/vendetta.css");
+@import url("index/magic.css");
+@import url("index/connection.css");
 
-#preview {
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-    text-align: center;
-    background: black;
-}
-
-.slider-buttons {
-    position: relative;
-    width: 10%;
-    float: right;
-    border-radius: 50%;
-    margin: 15px;
-    background: transparent;
-}
-
-.slider-buttons:hover {
-    background: rgba(255, 255, 255, 0.2);    
-}
-
-#slider-last {
-    float: left;
-}
-
-#slider-next {
-    float: right;
-}
-
-#slider {
-    position: relative;
-    text-align: center;
-}
-
-#world-map {
-    background: black url("../img/contacts_background.png") no-repeat;
-    background-size: 100% auto;
-    color: white;
-}
-
-#projects {
-	height: auto;
-    display: block;
-}
-
-#contacts {
-    
-}
-
-#contacts-list {
+MAIN SECTION
+{
     width: 100%;
-    margin-top: 7%;
-    margin-bottom: 7%;
-}
-
-.contact-icon {
-    width: 17%;
-    border-radius: 50%;
+    height: 100%;
 }

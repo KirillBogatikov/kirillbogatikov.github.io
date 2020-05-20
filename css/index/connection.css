@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#connection .left 
+{
+	width: 67%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	float: left;
+    font-family: Aqum;
+    color: #000B4C;
+}
+
+
+#connection .right 
+{
+	width: 35%;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	float: left;
+    font-family: Aqum;
+    color: #000B4C;
+}
+
+.left .text
+{
+	margin-top: 15%;
+}
+
+.left #payform
+{
+	margin-top: 5%;
+	margin-left: 25%;
+}
+
+.right .links
+{
+	width: 150px;
+	float: right;
+	margin-right: 100px;
+}
+
+.right .links IMG
+{ 
+	width: 150px;
+	float: left;
+	margin-top: 50px;
+}

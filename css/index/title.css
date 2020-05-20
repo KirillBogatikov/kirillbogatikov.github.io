@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+#title .left
+{
+    width: 40%;
+    height: 100%;
+    color: white;
+    position: relative;
+    float: left;
+}
+
+#title .name
+{
+    width: 100%;
+}
+
+#title .word
+{
+    width: 80%;
+    margin-top: 10%;
+}
+
+#title .place
+{
+    width: 50%;
+    font-family: Aqum;
+    font-size: 50%;
+    position: absolute;
+    cursor: help;
+    bottom: 5%;
+}
+
+#title .right 
+{
+    width: 80%;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    color: #000B4C;
+}
+
+#title .right H1
+{
+    font-size: 150%;
+}
+
+#title .right DIV
+{
+    float: right;
+    width: 50%;
+    font-family: Aqum;
+    text-align: center;
+    cursor: help;
+}
+
+#title .right DIV IMG
+{
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 10%;
+    float: left;
+}
+
+#title .right .projector
+{
+    margin-left: 50%;
+}
+
+#title .right .vendetta
+{
+    margin-left: 20%;
+    margin-right: 30%;
+}
+
+#title .right .magic
+{
+    margin-left: 40%;
+    margin-right: 10%;
+}
+
+#title .right .contacts
+{
+    margin-left: 0%;
+    margin-right: 50%;
+}
