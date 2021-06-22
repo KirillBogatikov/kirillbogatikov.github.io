@@ -2,24 +2,10 @@
 
 @font-face
 {
-    font-family: 'Aqum';
-    src: url('../fonts/Aqum.ttf');
+    font-family: 'Zekton';
+    src: url('../fonts/ZektonRg.ttf');
 }
 
-@font-face
-{
-    font-family: 'Gagalin';
-    src: url('../fonts/Gagalin.otf');
-}
-
-@font-face
-{
-    font-family: 'BloggerSans';
-    src: url('../fonts/Blogger Sans.ttf');
-}
-
-@font-face
-{
-    font-family: 'CaptureIt';
-    src: url('../fonts/Capture It.ttf');
+* {
+    --title-font-family: Zekton, "Zekton Rg", Tahoma, sans-serif;
 }

@@ -1,12 +1,88 @@
 @charset "UTF-8";
-@import url("index/title.css");
-@import url("index/projector.css");
-@import url("index/vendetta.css");
-@import url("index/magic.css");
-@import url("index/connection.css");
 
-MAIN SECTION
-{
-    width: 100%;
-    height: 100%;
+@import "fonts.css";
+@import "colors.css";
+@import "landscape.css";
+@import "portrait.css";
+@import "profile.css";
+
+HTML, BODY {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background: var(--primary-selection-color);
+}
+
+#container {
+    overflow: hidden;
+    /* FLEX */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container > .title {
+    /* STYLES */
+    background: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: var(--title-font-family);
+    font-size: 300%;
+    box-shadow: 0 10px 10px var(--shadow-light-color);
+}
+
+#container > .section, #container > .title {
+    /* BOUNDS */
+    position: relative;
+    padding: 4%;
+    width: 92%;
+
+    /* TRANSFORM */
+    transform: rotate(-2deg);
+}
+
+DIV#cards {
+    display: flex;
+    justify-content: center;
+}
+
+DIV#cards > .wrapper {
+    /* FLEX */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+DIV.card {
+    /* BOUNDS */
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px 20px 10px 20px;
+
+    /* STYLES */
+    background: #eeeeee;
+    font-family: var(--title-font-family);
+    font-size: 20pt;
+    text-align: center;
+    box-shadow: 2px 2px 5px var(--shadow-light-color);
+
+    /* FLEX */
+    display: flex;
+    align-items: center;
+}
+
+DIV.card *::selection {
+    background: var(--secondary-selection-color);
+}
+
+DIV.card[contact] {
+    cursor: alias;
+}
+
+DIV.card[link] {
+    cursor: help;
 }

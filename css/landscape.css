@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@media screen and (orientation: landscape) {
+    * {
+
+    }
+
+    #profile {
+        width: 20%;
+        height: 96%;
+        padding: 2%;
+        top: -1%;
+        right: -1%;
+        bottom: 0;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: -5px 0 10px var(--shadow-color);
+        z-index: 3;
+    }
+
+    #avatar {
+        width: 40%;
+    }
+
+    #name {
+        font-size: 600%;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        margin-top: 15%;
+    }
+
+    #container {
+        /* BOUNDS */
+        width: 79%;
+        position: absolute;
+    }
+
+    #container {
+        left: -1%;
+    }
+
+    DIV#cards > .wrapper {
+        position: relative;
+        width: 60%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    DIV.card {
+        /* BOUNDS */
+        max-width: 350px;
+        min-height: 80px;
+    }
+
+    DIV.card .title {
+        font-size: 130%;
+    }
+
+    DIV.card .logo {
+        width: 125px;
+    }
+}
