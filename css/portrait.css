@@ -29,7 +29,7 @@
     }
 
     #name {
-        //font-size: 600%;
+        font-size: 200%;
         margin-left: 8%;
     }
 
@@ -45,18 +45,18 @@
 
     DIV.card {
         /* BOUNDS */
-        max-width: 200px;
-        min-height: 80px;
+        max-width: 150px;
         padding: 5px;
-        margin: 8px;
+        margin: 10px;
         border-radius: 7px 14px 7px 14px;
     }
 
     DIV.card .title {
-        //font-size: 150%;
+        font-size: 130%;
     }
 
     DIV.card .logo {
-        width: 75px;
+        width: 55px;
+        margin-right: 5px;
     }
 }
