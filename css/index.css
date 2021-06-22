@@ -16,7 +16,9 @@ HTML, BODY {
 }
 
 #container {
+    left: -1%;
     overflow: hidden;
+
     /* FLEX */
     display: flex;
     justify-content: center;
@@ -30,7 +32,6 @@ HTML, BODY {
     color: #FFFFFF;
     text-align: center;
     font-family: var(--title-font-family);
-    font-size: 300%;
     box-shadow: 0 10px 10px var(--shadow-light-color);
 }
 
@@ -58,15 +59,10 @@ DIV#cards > .wrapper {
 }
 
 DIV.card {
-    /* BOUNDS */
-    padding: 10px;
-    margin: 15px;
-    border-radius: 10px 20px 10px 20px;
 
     /* STYLES */
     background: #eeeeee;
     font-family: var(--title-font-family);
-    font-size: 20pt;
     text-align: center;
     box-shadow: 2px 2px 5px var(--shadow-light-color);
 
