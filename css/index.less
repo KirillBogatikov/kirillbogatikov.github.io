@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+HTML, BODY {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.no-marker() {
+  list-style-type: none;
+}
+
+UL.no-marker {
+  .no-marker();
+}
+
+UL.horizontal {
+  .no-marker();
+  text-align: right;
+  margin: 0 var(--margin-right) 0 0;
+
+  LI {
+    display: var(--display);
+    margin-left: 1vw;
+  }
+
+  LI:first-child {
+    margin-left: 0;
+  }
+}
+
+.flex-center-vertical {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#portrait, #landscape {
+  display: none;
+}

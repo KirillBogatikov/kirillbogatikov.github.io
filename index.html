@@ -1,57 +1,144 @@
-<!doctype>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
     <head>
-        <link rel="stylesheet" href="css/index.css?1">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8"/>
-        <title>Kirill Bogatikov's official page</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet/less" type="text/css" href="css/dimensions.less">
+        <link rel="stylesheet/less" type="text/css" href="css/fonts.less">
+        <link rel="stylesheet/less" type="text/css" href="css/animations.less">
+        <link rel="stylesheet/less" type="text/css" href="css/index.less">
+        <link rel="stylesheet/less" type="text/css" href="css/stars.less">
+        <link rel="stylesheet/less" type="text/css" href="css/page.less">
+        <link rel="stylesheet/less" type="text/css" href="css/universe.less">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" type="text/javascript"></script>
+        <title>Title</title>
     </head>
     <body>
-        <div id="profile">
-            <img id="avatar" src="img/avatar.png" alt="avatar"/><!-- avatar -->
-            <div id="name">Kirill Bogatikov</div>
+        <div id="landscape"></div>
+        <div id="portrait"></div>
+        <div id="star-background">
+            <div id="star1" class="star"></div>
+            <div id="star2" class="star"></div>
+            <div id="star3" class="star"></div>
+            <div id="star4" class="star"></div>
+            <div id="star5" class="star"></div>
+            <div id="star6" class="star"></div>
         </div>
-        <div id="container">
-            <div class="section" id="cards">
-                <div class="wrapper">
-                    <div class="card" contact>
-                        <img class="logo" src="img/contacts/vk.png" alt="vk logo"/>
-                        <span class="title">VK</span>
+        <div id="universe" class="">
+            <div id="initiatives">
+                <div id="prologue">A whole universe of projects, solutions, tools and entertainment</div>
+                <div id="system">
+                    <div id="red-light-holdings" class="core" onclick="scrollToSection('#red-light-holdings-page')">
+                        <img class="content" src="img/projects/red_light_holdings/logo.png"/>
+                        <div class="title">Red Light Holdings</div>
                     </div>
-                    <div class="card" contact>
-                        <img class="logo" src="img/contacts/instagram.png" alt="instagram logo"/>
-                        <span class="title">Instagram</span>
+                    <div id="viva-victoria" class="core" onclick="scrollToSection('#viva-victoria-page')">
+                        <img class="content" src="https://avatars1.githubusercontent.com/u/63678814?s=200&v=4"/>
+                        <div class="title">Viva Victoria Initiative</div>
                     </div>
-                    <div class="card" contact>
-                        <img class="logo" src="img/contacts/mail.png" alt="google mail logo">
-                        <span class="title">E-mail</span>
+                    <div id="strange-target" onclick="scrollToSection('#coming-soon-page')">
+                        ?
                     </div>
-                    <div class="card" link>
-                        <img class="logo" src="img/contacts/octocat.png" alt="github octocat logo"/>
-                        <span class="title">Personal GitHub</span>
+                    <div id="projector-solutions" class="core" onclick="scrollToSection('#projector-solutions-page')">
+                        <img class="content" src="https://avatars1.githubusercontent.com/u/64668273?s=200&v=4"/>
+                        <div class="title">Projector Solutions Ltd.</div>
                     </div>
-                    <div class="card" link>
-                        <img class="logo" src="img/rlh/logo.png" alt="red light holding logo"/>
-                        <span class="title">Red Light Holding</span>
+                    <div id="dark-horse" class="core" onclick="scrollToSection('#dark-horse-page')">
+                        <img class="content" src="img/projects/dark_horse.png"/>
+                        <div class="title">Dark Horse messenger</div>
                     </div>
-                    <div class="card" link>
-                        <img class="logo" src="https://avatars1.githubusercontent.com/u/63678814?s=200&v=4" alt="viva victoria logo"/>
-                        <span class="title">Viva Victoria Initiative</span>
-                    </div>
-                    <div class="card" link>
-                        <img class="logo" src="https://avatars3.githubusercontent.com/u/64668273?s=200&v=4" alt="projector solutions logo"/>
-                        <span class="title">Projector Solutions Ltd.</span>
+                    <div id="pharaon" class="core" onclick="scrollToSection('#pharaon-page')">
+                        <img class="content" src="img/projects/pharaon.png"/>
+                        <div class="title">Pharaon IMS</div>
                     </div>
                 </div>
             </div>
-            <div class="title">Projects Overview</div>
-            <div id="overview">
-                <div class="project">
-                    <img class="logo" />
-                    <span class="title"></span>
-                    <span class="description"></span>
+            <div id="header" class="flex-center-vertical">
+                <div id="name" class="flex-center-vertical">
+                    <img id="avatar" src="img/me/avatar.png"/>
+                    <span>Kirill Bogatikov</span>
+                </div>
+                <div id="actions" class="flex-center-vertical">
+                    <ul class="horizontal">
+                        <li onclick="scrollToSection('#me')">Me</li>
+                        <li onclick="scrollToSection('#viva-victoria-page')">Projects</li>
+                        <li onclick="scrollToSection('#contacts')">Contacts</li>
+                        <li id="action-universe" onclick="scrollToSection('#universe')">Universe</li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div id="pages">
+            <div class="page" id="me">
+                <div class="title">
+                    About me
+                </div>
+                <div class="content">
+                    TODO :)
+                </div>
+            </div>
+            <div class="page" id="contacts">
+                <div class="title">
+                    In touch with me
+                </div>
+                <div class="content">
+                    Nam ullamcorper augue non dui aliquet iaculis in sed arcu. Nunc orci nisi, tristique eu varius ut, lacinia auctor nulla. Sed tempus neque ut tortor ullamcorper egestas. Sed vitae nibh id ex tempor euismod. Nunc placerat augue dictum, condimentum elit congue, volutpat sem. Aliquam sapien ex, molestie id tincidunt non, placerat id ante. Aenean vestibulum congue venenatis. Nam accumsan arcu vitae elit porttitor placerat. Maecenas vitae lorem vitae nunc hendrerit aliquet.
+                </div>
+            </div>
+            <div class="page" id="viva-victoria-page">
+                <div class="title">
+                    Viva Victoria Initiative
+                </div>
+                <div class="content">
+                    Cras consequat pharetra nisl ut congue. Etiam nec lorem ornare, tristique enim sit amet, consequat risus. In euismod cursus malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam lobortis orci quis turpis pellentesque consectetur et sed nisi. Donec maximus, ligula in egestas dapibus, lorem quam sollicitudin quam, eu rutrum purus magna quis tellus. Aliquam rutrum suscipit ex. Morbi fermentum elementum dui quis gravida. Sed volutpat libero dignissim, hendrerit mauris faucibus, convallis nibh. Mauris at lectus non libero dapibus mollis in eget nulla. Nunc cursus, orci non placerat pharetra, urna enim dapibus metus, in elementum eros neque sit amet mi. Nulla ac condimentum massa, ac rutrum odio. Duis vestibulum sollicitudin suscipit. Nam vehicula nisl eleifend ipsum laoreet facilisis.
+                </div>
+            </div>
+            <div class="page" id="projector-solutions-page">
+                <div class="title">
+                    Projector Solutions Limited
+                </div>
+                <div class="content">
+                    Nam porttitor congue ante non commodo. In non odio massa. Etiam luctus eros id pretium tincidunt. Proin vel velit venenatis, tincidunt neque in, cursus lectus. Donec fringilla sem vulputate, sollicitudin mi non, consequat tortor. Fusce ac tellus sit amet lectus accumsan feugiat. In hac habitasse platea dictumst. Quisque a ultrices lorem. Maecenas auctor arcu vitae aliquam ornare.
+                </div>
+            </div>
+            <div class="page" id="dark-horse-page">
+                <div class="title">
+                    Dark Horse p2p messenger
+                </div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tristique est. Vestibulum ullamcorper volutpat ipsum in finibus. Pellentesque aliquet pretium purus dignissim tempor. Nam tortor neque, egestas eget ultrices eu, consectetur nec orci. Fusce ac ex sed nulla tincidunt consectetur. Nunc sed sollicitudin erat, vel efficitur sem.
+                </div>
+            </div>
+            <div class="page" id="pharaon-page">
+                <div class="title">
+                    Pharaon integrated management system (IMS)
+                </div>
+                <div class="content">
+                    Phasellus nec dignissim leo, in mollis orci. Donec aliquet ligula at arcu ullamcorper rhoncus. Nam malesuada dictum ante sed aliquam. Duis sollicitudin ultrices turpis, eu tincidunt sem dapibus sed. Phasellus quam nunc, dapibus vitae varius vitae, facilisis eu velit. Sed ac nunc eros. Vivamus facilisis nisi nec tellus luctus, eget scelerisque diam lacinia. Duis porttitor lectus et ante consequat pharetra. Cras rhoncus commodo risus, finibus feugiat justo convallis sed. Vivamus libero tortor, vehicula ut faucibus quis, aliquet id enim. Integer ut dui vel leo molestie luctus ut in turpis. Cras ut nunc blandit, varius enim quis, fringilla dui. Maecenas placerat odio ornare metus pharetra placerat. Sed non dictum nulla.
+                </div>
+            </div>
+            <div class="page" id="red-light-holdings-page">
+                <div class="title">
+                    RED Light Holdings
+                </div>
+                <div class="content">
+                    Pellentesque semper bibendum ex, eget consectetur quam venenatis ut. Praesent interdum mauris at scelerisque fermentum. Sed convallis ut justo nec placerat. Nullam fringilla euismod lectus. Vivamus ultricies enim eros, ac consequat tortor interdum eu. Aliquam porta, leo nec volutpat tempus, magna urna mattis sem, quis ultricies orci felis et tellus. Maecenas viverra mattis lorem, id viverra velit eleifend vel. Nam sollicitudin risus ac sodales fringilla. Sed est libero, sollicitudin sed interdum vitae, auctor non mi. In at ipsum est. Mauris pellentesque malesuada augue, quis semper leo suscipit fermentum.
+                </div>
+            </div>
+            <div class="page" id="coming-soon">
+                <div class="title">
+                    Coming soon
+                </div>
+                <div class="content">
+                    Pellentesque sed leo eget elit gravida faucibus. Sed a porttitor ante, id molestie erat. Nulla facilisi. Suspendisse vitae orci massa. Morbi et nulla id sapien egestas posuere. Nam eros eros, pharetra sed condimentum blandit, commodo ac est. Suspendisse ac dignissim magna, et ultricies odio. Sed vel iaculis ante. Donec odio nulla, tincidunt ut felis ut, aliquam tincidunt ipsum. Quisque fermentum ultricies purus et lacinia.
+                </div>
+            </div>
+        </div>
+        <script src="js/onload.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/animate.js"></script>
+        <script src="js/scroller.js"></script>
+        <script src="js/universe_pulse.js"></script>
     </body>
 </html>

@@ -1,0 +1,38 @@
+#pages {
+  width: 100%;
+  margin: var(--margin-top) 0 0 0;
+}
+
+.page {
+  position: relative;
+  width: var(--width);
+  min-height: var(--min-height);
+  padding: var(--padding);
+  margin: 0 0 8vh -3.5vw;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+  transform: rotate(-2deg);
+  font-size: 3vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    width: 100%;
+    margin: 0 0 var(--margin-bottom) 0;
+
+    letter-spacing: 3px;
+    text-align: left;
+
+    font-family: var(--font-title);
+    font-size: var(--font-size);
+  }
+
+  .content {
+    font-family: var(--font-text);
+  }
+}

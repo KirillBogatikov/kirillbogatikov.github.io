@@ -1,0 +1,175 @@
+#universe {
+  position: absolute;
+  width: 93%;
+  margin: -3.7vh 0 0 -3.5vw;
+  padding: 4vh 7vw 2vh 7vw;
+  z-index: 1;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  animation: universeMinimize 1ms reverse;
+
+  transform: rotate(-2deg);
+
+  font-family: var(--font-text);
+  font-size: var(--font-size);
+
+  #header {
+    width: 100%;
+
+    justify-content: space-between;
+
+    #name {
+      height: var(--height);
+      font-size: var(--font-size);
+      float: left;
+
+      #avatar {
+        margin-right: 2vw;
+        width: var(--size);
+        height: var(--size);
+      }
+    }
+
+    #actions {
+      float: right;
+      font-family: var(--font-title);
+      font-size: var(--font-size);
+
+      LI.active {
+        animation: actionHide 400ms linear forwards;
+      }
+
+      LI.inactive {
+        animation: actionShow 400ms linear forwards;
+      }
+    }
+  }
+
+  #initiatives {
+    height: var(--height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    #prologue {
+      position: absolute;
+      width: var(--width);
+      height: var(--height);
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+      text-align: center;
+      font-size: var(--font-size);
+    }
+
+    #system {
+      .core {
+        width: 16vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+          margin-left: 3vh;
+          width: 10vh;
+          height: 10vh;
+        }
+
+        .title {
+          width: 100%;
+          font-size: 1vh;
+          text-align: center;
+          opacity: 0;
+          height: 0;
+          margin-top: 1vh;
+        }
+      }
+
+      .core.mouseenter {
+        animation: scaleForward 400ms linear forwards;
+
+        .title {
+          animation: titleShow 400ms linear forwards;
+        }
+      }
+
+      .core.mouseleave {
+        animation: scaleBackward 400ms linear forwards;
+
+        .title {
+          animation: titleHide 400ms linear forwards;
+        }
+      }
+    }
+
+    #strange-target {
+      width: 7vh;
+      height: 7vh;
+      font-size: 5vh;
+      border: solid 3px white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: pulse 10s cubic-bezier(0.59, 0.2, 0.32, 1.13) infinite;
+    }
+
+    #red-light-holdings {
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+
+      .content {
+        animation: roundMove 6s linear infinite;
+        animation-delay: 0ms;
+      }
+    }
+
+    #projector-solutions {
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+
+      .content {
+        animation: roundMove 6s linear infinite;
+        animation-delay: -600ms;
+      }
+    }
+
+    #viva-victoria {
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+
+      .content {
+        animation: roundMove 6s linear infinite;
+        animation-delay: -1500ms;
+      }
+    }
+
+    #dark-horse {
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+
+      .content {
+        animation: roundMove 6s linear infinite;
+        animation-delay: -2100ms;
+      }
+    }
+
+    #pharaon {
+      margin-top: var(--margin-top);
+      margin-left: var(--margin-left);
+
+      .content {
+        animation: roundMove 6s linear infinite;
+        animation-delay: -2500ms;
+      }
+    }
+  }
+}
+
+#universe.minimized {
+  position: fixed;
+  background: black;
+  margin-top: var(--margin-top);
+}
