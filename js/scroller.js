@@ -18,7 +18,6 @@ onload_functions.push((t) => {
 t.addEvent(null, "scroll", function () {
         let universeBlock = t.query("#universe");
         let height = t.query("#initiatives").clientHeight;
-        console.log(t.currentScrollTop(), height);
 
         if (t.currentScrollTop() > height) {
             if (!universeBlock.classList.contains("minimized")) {
